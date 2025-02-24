@@ -1,0 +1,39 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GestionCamera : MonoBehaviour
+{
+    public float vitesseSouris = 100f;
+    
+    public float angleMaxY = 80f;
+    public float angleMinY = -30f;
+
+    public float rotationY = 0f;
+
+    void Start ()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+
+        Cursor.visible = false;
+    }
+    
+    // Update is called once per frame
+    void Update()
+    {
+        TournerY();  
+    }
+
+// Gère la rotation de la caméra verticale
+    void TournerY()
+    {
+        float deplacementSourisY = Input.GetAxis("Mouse Y") * vitesseSouris * Time.deltaTime;
+
+        rotationY += deplacementSourisY;
+
+        rotationY = Mathf.Clamp(rotationY, angleMinY, angleMaxY);
+
+        transform.localRotation = Quaternion.Euler(-rotationY, 0f, 0f);
+
+    }
+}
