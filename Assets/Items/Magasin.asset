@@ -9,11 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4213444590d9b204d8fc85eb7d4db252, type: 3}
-  m_Name: Baton
+  m_Script: {fileID: 11500000, guid: ef8305585e1809c45a51a6164cb9ba22, type: 3}
+  m_Name: Magasin
   m_EditorClassIdentifier: 
-  nomItem: Baton
-  prixItem: 10
-  degats: 0
-  vendable: 1
-  description: "Un beau b\xE2ton."
+  items: []

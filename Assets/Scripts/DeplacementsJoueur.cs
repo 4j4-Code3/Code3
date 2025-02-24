@@ -12,14 +12,14 @@ public class DeplacementsJoueur : MonoBehaviour
     public float vitesseSouris = 1000f;
     public float rotationX = 0f;
 
-    public float forceSaut = 10f;
+    public float forceSaut = 5f;
     private bool estAuSol = true;
 
     // Quand on tombe la gravité est accéléré
     public float multiplicateurGravite = 2f;
 
     // Quand on saute la gravité est ralentie
-    public float diviseurGravite = 0.5f;
+    public float diviseurGravite = 0.8f;
 
     void Start()
     {
@@ -39,6 +39,16 @@ public class DeplacementsJoueur : MonoBehaviour
     {
         Vector3 mouvements = (transform.forward * touchesVerticals + transform.right * touchesHorizontals) * vitesse;
         rigidbody.linearVelocity = new Vector3(mouvements.x, rigidbody.linearVelocity.y, mouvements.z);
+
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            vitesse = 20f;
+        }
+        else
+        {
+            vitesse = 10f;
+        }
 
         if (Input.GetKeyDown(KeyCode.Space) && estAuSol)
         {

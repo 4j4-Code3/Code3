@@ -502,7 +502,6 @@ GameObject:
   - component: {fileID: 781689068}
   - component: {fileID: 781689067}
   - component: {fileID: 781689066}
-  - component: {fileID: 781689072}
   m_Layer: 0
   m_Name: Joueur
   m_TagString: Untagged
@@ -525,7 +524,7 @@ MonoBehaviour:
   vitesse: 10
   vitesseSouris: 1000
   rotationX: 0
-  forceSaut: 10
+  forceSaut: 5
   multiplicateurGravite: 2
   diviseurGravite: 0.5
 --- !u!54 &781689067
@@ -647,20 +646,6 @@ Transform:
   - {fileID: 330585546}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &781689072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 781689065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0df51dcd1f8a60240a584f1a168e6726, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemsJoueur: []
-  debris: 10
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -966,7 +951,6 @@ GameObject:
   - component: {fileID: 2024646835}
   - component: {fileID: 2024646834}
   - component: {fileID: 2024646833}
-  - component: {fileID: 2024646837}
   m_Layer: 0
   m_Name: LePresqueMarchand
   m_TagString: Untagged
@@ -1063,19 +1047,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2024646837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2024646832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7807f5df37af8164d80b14959397bae2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemsAVendre: []
 --- !u!1 &2099126530
 GameObject:
   m_ObjectHideFlags: 0
