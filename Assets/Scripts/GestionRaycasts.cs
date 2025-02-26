@@ -9,6 +9,10 @@ using Unity.VisualScripting;
 public class GestionRaycasts : MonoBehaviour
 {
     public TextMeshProUGUI texteInteraction;
+
+    public GameObject magasinUI;
+
+    public MagasinUI magasinUIActif;
     
     public bool estArme;
 
@@ -48,6 +52,7 @@ public class GestionRaycasts : MonoBehaviour
         {
             texteInteraction.text = "";
         }
+
         if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, 10, LayerMask.GetMask("Arme")))
         {
             texteInteraction.text = "E";
@@ -67,6 +72,30 @@ public class GestionRaycasts : MonoBehaviour
 
                 estArme = true;
             }
+        }
+
+        if(Physics.Raycast(camRay.origin, camRay.direction, 10, LayerMask.GetMask("Marchand")))
+        {
+            texteInteraction.text = "E";
+
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                magasinUI.SetActive(true);
+
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+
+                magasinUIActif.magasinUIActif = true;
+            }
+        }
+        if(Input.GetKeyDown(KeyCode.Q) && magasinUIActif.magasinUIActif)
+        {
+            magasinUI.SetActive(false);
+
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
+            magasinUIActif.magasinUIActif = false;
         }
 
         Debug.DrawRay(camRay.origin, camRay.direction * 10, Color.yellow);

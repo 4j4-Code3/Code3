@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4213444590d9b204d8fc85eb7d4db252, type: 3}
-  m_Name: Baton
+  m_Name: ClefAMolette
   m_EditorClassIdentifier: 
-  nom: Baton
-  prix: 10
+  nom: "Clef \xE0 molette"
+  prix: 15
   vendable: 1
-  degats: 5
-  description: Un beau baton.
+  degats: 10
+  description: Bonk!

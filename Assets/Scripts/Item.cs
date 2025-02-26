@@ -5,7 +5,7 @@ public class Item : ScriptableObject
 {
     public string nom;
     public int prix;
-    public bool vendable;
+    public int degats;
     [TextArea]
     public string description;
 }
