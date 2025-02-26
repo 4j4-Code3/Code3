@@ -1117,6 +1117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listeItems: {fileID: 11400000, guid: c20fbe79f0ed99c47a0621b5ec8471f9, type: 2}
+  inventaire: {fileID: 11400000, guid: dd5b535f144ea174a80e9130146e32b6, type: 2}
   boutonPrefab: {fileID: 5167971201349159142, guid: 954a7e0106b9e5842aadd2a7d9fda52f, type: 3}
   parentBouton: {fileID: 667463344}
   magasinUIActif: 0

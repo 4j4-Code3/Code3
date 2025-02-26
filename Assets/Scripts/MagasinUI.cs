@@ -5,7 +5,8 @@ using System.Linq;
 
 public class MagasinUI : MonoBehaviour
 {
-    public ListeItems listeItems;
+    public ListeItemsMagasin listeItems;
+    public Inventaire inventaire;
 
     public GameObject boutonPrefab;
     public GameObject parentBouton;
@@ -19,12 +20,16 @@ public class MagasinUI : MonoBehaviour
             GameObject cloneBouton = Instantiate(boutonPrefab, parentBouton.transform);
             cloneBouton.GetComponent<InfosBoutons>().nomItem.text = item.nom;
             cloneBouton.GetComponent<InfosBoutons>().prixItem.text = item.prix.ToString();
-            cloneBouton.GetComponent<Button>().onClick.AddListener(() => Selecteur());
+            if(inventaire.debris >= item.prix)
+            {
+                cloneBouton.GetComponent<Button>().onClick.AddListener(() => Acheter());
+                inventaire.debris -= item.prix;
+            }
         }    
     }
 
-    private void Selecteur()
+    private void Acheter()
     {
-        Debug.Log("alo");
+        Debug.Log("letsgooo");
     }
 }
