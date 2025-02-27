@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.Linq;
+using Unity.VisualScripting;
 
 public class MagasinUI : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class MagasinUI : MonoBehaviour
 
     public GameObject boutonPrefab;
     public GameObject parentBouton;
+    
 
     public bool magasinUIActif = false;
 
@@ -20,16 +22,20 @@ public class MagasinUI : MonoBehaviour
             GameObject cloneBouton = Instantiate(boutonPrefab, parentBouton.transform);
             cloneBouton.GetComponent<InfosBoutons>().nomItem.text = item.nom;
             cloneBouton.GetComponent<InfosBoutons>().prixItem.text = item.prix.ToString();
-            if(inventaire.debris >= item.prix)
-            {
-                cloneBouton.GetComponent<Button>().onClick.AddListener(() => Acheter());
-                inventaire.debris -= item.prix;
-            }
+            cloneBouton.GetComponent<Button>().onClick.AddListener(() => Acheter(item, cloneBouton));
+            
         }    
     }
 
-    private void Acheter()
+    private void Acheter(Item item, GameObject bouton)
     {
-        Debug.Log("letsgooo");
+        if(inventaire.debris >= item.prix)
+        {
+            inventaire.debris -= item.prix;
+            Destroy(bouton);
+
+            listeItems.itemsAVendre.Remove(item);
+            inventaire.items.Add(item);
+        }
     }
 }

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Inventaire
   m_EditorClassIdentifier: 
   items: []
-  debris: 100
+  debris: 0

@@ -73,7 +73,8 @@ public class GestionRaycasts : MonoBehaviour
                 estArme = true;
             }
         }
-
+        
+        // Affichage du UI du magasin
         if(Physics.Raycast(camRay.origin, camRay.direction, 10, LayerMask.GetMask("Marchand")))
         {
             texteInteraction.text = "E";
