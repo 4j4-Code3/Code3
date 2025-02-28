@@ -1,16 +1,34 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class GestionBoutonsItnr : MonoBehaviour
+public class ChangementScene : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public Button boutonNouvellePartie;
+    public Button boutonContinuer;
+    public Button boutonParametres;
+    public Button boutonControles;
+    public Button boutonQuitter;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	// void Start () {
+    // Définir les boutons du menu principal
+	// 	boutonNouvellePartie = boutonNouvellePartie.GetComponent<Button>();
+
+	// 	boutonContinuer = boutonContinuer.GetComponent<Button>();
+
+	// 	boutonParametres = boutonParametres.GetComponent<Button>();
+	// 	boutonParametres.onClick.AddListener(ChargerPageParametres);
+
+	// 	boutonControles = boutonControles.GetComponent<Button>();
+	// 	boutonControles.onClick.AddListener(ChargerPageControles);
+    //  }
+
+    // public void ChargerSceneCode3()
+    // {
+    //     SceneManager.LoadScene("Code3");
+    // }
+    
+
 }
