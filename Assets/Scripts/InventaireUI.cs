@@ -20,6 +20,9 @@ public class InventaireUI : MonoBehaviour
             {
                 GameObject cloneIcone = Instantiate(iconePrefab, parentIcone.transform);
                 cloneIcone.GetComponent<Image>().sprite = item.icone;
+                InfosIcones infosIcones = cloneIcone.GetComponent<InfosIcones>();
+                infosIcones.item = item;
+                
             }
             inventaireUIActif = true;
             inventaireUI.SetActive(inventaireUIActif);
@@ -38,4 +41,6 @@ public class InventaireUI : MonoBehaviour
             Cursor.visible = false;
         }
     }
+
+    
 }
