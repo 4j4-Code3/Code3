@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18d7d0a157be6dc43a9eeddd0636b426, type: 3}
   m_Name: Inventaire
   m_EditorClassIdentifier: 
-  items: []
-  debris: 5
+  items:
+  - {fileID: 11400000, guid: bb299fff88591474a84dfebafd9eb29d, type: 2}
+  debris: 20
