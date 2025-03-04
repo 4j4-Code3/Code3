@@ -23,15 +23,19 @@ public class InventaireUI : MonoBehaviour
             }
             inventaireUIActif = true;
             inventaireUI.SetActive(inventaireUIActif);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
         else if(Input.GetKeyDown(KeyCode.I) && inventaireUIActif)
         {
-            foreach (Transform child in parentIcone.transform)
+            foreach (Transform enfant in parentIcone.transform)
             {
-                Destroy(child.gameObject);
+                Destroy(enfant.gameObject);
             }
             inventaireUIActif = false;
             inventaireUI.SetActive(inventaireUIActif);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
     }
 }

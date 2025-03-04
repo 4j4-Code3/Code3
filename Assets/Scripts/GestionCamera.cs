@@ -11,6 +11,9 @@ public class GestionCamera : MonoBehaviour
 
     public float rotationY = 0f;
 
+    public InventaireUI inventaireUI;
+    public MagasinUI magasinUI;
+
     void Start ()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -21,7 +24,14 @@ public class GestionCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TournerY();  
+        if(inventaireUI.inventaireUIActif || magasinUI.magasinUIActif)
+        {
+            return;
+        }
+        else
+        {
+            TournerY();
+        }
     }
 
 // Gère la rotation de la caméra verticale

@@ -89,7 +89,7 @@ public class GestionRaycasts : MonoBehaviour
                 magasinUIActif.magasinUIActif = true;
             }
         }
-        if(Input.GetKeyDown(KeyCode.Q) && magasinUIActif.magasinUIActif)
+        if(Input.GetKeyDown(KeyCode.Q))
         {
             magasinUI.SetActive(false);
 

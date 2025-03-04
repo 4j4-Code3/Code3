@@ -9,11 +9,14 @@ public class DeplacementsJoueur : MonoBehaviour
     private float touchesHorizontals;
     public float vitesse = 10f;
 
-    public float vitesseSouris = 1000f;
+    public float vitesseSouris = 700f;
     public float rotationX = 0f;
 
     public float forceSaut = 5f;
     private bool estAuSol = true;
+
+    public InventaireUI inventaireUI;
+    public MagasinUI magasinUI;
 
     // Quand on tombe la gravité est accéléré
     public float multiplicateurGravite = 2f;
@@ -32,7 +35,15 @@ public class DeplacementsJoueur : MonoBehaviour
         touchesHorizontals = Input.GetAxis("Horizontal");
 
         Deplacements();
-        TournerX();
+
+        if(inventaireUI.inventaireUIActif || magasinUI.magasinUIActif)
+        {
+            return;
+        }
+        else
+        {
+            TournerX();
+        }
     }
 
     void Deplacements()
