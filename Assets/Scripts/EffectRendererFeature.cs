@@ -5,11 +5,11 @@ using UnityEngine.Rendering.RenderGraphModule;
 using UnityEngine.Rendering.RenderGraphModule.Util;
 using System.Diagnostics;
 
-public class DitherEffectRendererFeature : ScriptableRendererFeature
+public class EffectRendererFeature : ScriptableRendererFeature
 {
-    class DitherEffectPass : ScriptableRenderPass
+    class EffectPass : ScriptableRenderPass
     {
-        const string m_PassName = "DitherEffectPass";
+        const string m_PassName = "EffectPass";
         Material m_BlitMaterial;
 
 
@@ -36,7 +36,7 @@ public class DitherEffectRendererFeature : ScriptableRendererFeature
 
             if(resourceData.isActiveTargetBackBuffer)
             {
-                UnityEngine.Debug.LogError($"Skipping render pass. ditherEffectRenderFeature requires an intermediate ColorTexture, we can't use the BackBuffer as a texture input.");
+                UnityEngine.Debug.LogError($"Skipping render pass. effectRenderFeature requires an intermediate ColorTexture, we can't use the BackBuffer as a texture input.");
                 return;
             }
 
@@ -58,12 +58,12 @@ public class DitherEffectRendererFeature : ScriptableRendererFeature
     public RenderPassEvent injectionPoint = RenderPassEvent.AfterRenderingPostProcessing;
     public Material material;
 
-    DitherEffectPass m_ScriptablePass;
+    EffectPass m_ScriptablePass;
 
     /// <inheritdoc/>
     public override void Create()
     {
-        m_ScriptablePass = new DitherEffectPass();
+        m_ScriptablePass = new EffectPass();
 
         // Configures where the render pass should be injected.
         m_ScriptablePass.renderPassEvent = injectionPoint;
@@ -75,7 +75,7 @@ public class DitherEffectRendererFeature : ScriptableRendererFeature
     {
         if(material == null)
         {   
-            UnityEngine.Debug.LogError("DitherEffectRendererFeature material is null and will be skipped.");
+            UnityEngine.Debug.LogError("EffectRendererFeature material is null and will be skipped.");
             return;
         }
 
