@@ -5,20 +5,22 @@ using TMPro;
 
 public class InfosIcones : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public TextMeshProUGUI texteDescription;
     public Item item;
+    public GameObject description;
 
     void Start()
     {
-        texteDescription.text = "";
+        description = GameObject.Find("Description");
+        description.GetComponent<TextMeshProUGUI>().text = "";
+        
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        texteDescription.text = item.description;
+        description.GetComponent<TextMeshProUGUI>().text = item.description;
     }
     public void OnPointerExit(PointerEventData eventData)
     {
-        texteDescription.text = "";
+        description.GetComponent<TextMeshProUGUI>().text = "";
     }
 }
