@@ -12,7 +12,6 @@ public class InfosIcones : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         description = GameObject.Find("Description");
         description.GetComponent<TextMeshProUGUI>().text = "";
-        
     }
 
     public void OnPointerEnter(PointerEventData eventData)
