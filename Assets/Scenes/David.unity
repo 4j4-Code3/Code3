@@ -904,7 +904,7 @@ GameObject:
   - component: {fileID: 781689066}
   - component: {fileID: 781689072}
   - component: {fileID: 781689073}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Joueur
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1692,6 +1692,8 @@ GameObject:
   - component: {fileID: 1702617232}
   - component: {fileID: 1702617236}
   - component: {fileID: 1702617237}
+  - component: {fileID: 1702617238}
+  - component: {fileID: 1702617239}
   m_Layer: 0
   m_Name: Ennemi
   m_TagString: Untagged
@@ -1826,6 +1828,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vie: 10
   joueur: {fileID: 781689065}
+  statsJoueur: {fileID: 11400000, guid: b74a932cc0987544b9256d14ffc53f52, type: 2}
+--- !u!135 &1702617238
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702617231}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.73
+  m_Center: {x: 0.000000059604645, y: 0, z: 0.69}
+--- !u!114 &1702617239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702617231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75a19fe63574e02469a62a2c49339838, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joueur: {fileID: 781689071}
+  porteVision: 7
+  rayonSphere: 1.5
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  joueurVu: 0
 --- !u!1 &1773265427
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ using Unity.Mathematics;
 using System.Data;
 using Unity.VisualScripting;
 
-public class GestionRaycasts : MonoBehaviour
+public class GestionRaycastsJoueur : MonoBehaviour
 {
     public TextMeshProUGUI texteInteraction;
 

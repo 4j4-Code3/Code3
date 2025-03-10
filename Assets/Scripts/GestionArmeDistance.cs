@@ -7,12 +7,12 @@ public class GestionArmeDistance : MonoBehaviour
     public Transform offset;
     public GameObject projectile;
 
-    public GestionRaycasts armeTenue;
+    public GestionRaycastsJoueur armeTenue;
 
     // Start is called before the first frame update
     void Start()
     {
-        armeTenue = armeTenue.GetComponent<GestionRaycasts>();
+        armeTenue = armeTenue.GetComponent<GestionRaycastsJoueur>();
     }
 
     // Update is called once per frame
