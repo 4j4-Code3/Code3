@@ -1,16 +1,16 @@
-// using System.Collections;
-// using System.Collections.Generic;
-// using UnityEngine;
-// using UnityEngine.UI;
-// using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-// public class ChangementScene : MonoBehaviour
-// {
-//     public Button boutonNouvellePartie;
-//     public Button boutonContinuer;
-//     public Button boutonParametres;
-//     public Button boutonControles;
-//     public Button boutonQuitter;
+public class GestionBoutonsIntro : MonoBehaviour
+{
+    public Button boutonNouvellePartie;
+    public Button boutonContinuer;
+    public Button boutonParametres;
+    public Button boutonControles;
+    public Button boutonQuitter;
 
 // 	void Start () {
 //     // Définir les boutons du menu principal
@@ -30,5 +30,10 @@
 //         SceneManager.LoadScene("Code3");
 //     }
     
+        public void Quitter() {
+        Application.Quit();
 
-// }
+        Debug.Log ("Tu as quitté le jeu");
+        } 
+
+}
