@@ -6,34 +6,36 @@ using UnityEngine.SceneManagement;
 
 public class GestionBoutonsIntro : MonoBehaviour
 {
+    // Définir les boutons du menu principal
     public Button boutonNouvellePartie;
     public Button boutonContinuer;
     public Button boutonParametres;
     public Button boutonControles;
     public Button boutonQuitter;
 
-// 	void Start () {
-//     // Définir les boutons du menu principal
-// 		boutonNouvellePartie = boutonNouvellePartie.GetComponent<Button>();
+    public AudioClip sonPapier;
 
-// 		boutonContinuer = boutonContinuer.GetComponent<Button>();
+	    void Start (){
+		boutonControles = boutonControles.GetComponent<Button>();
+		boutonControles.onClick.AddListener(JouerSonPapier);
+        }
 
-// 		boutonParametres = boutonParametres.GetComponent<Button>();
-// 		boutonParametres.onClick.AddListener(ChargerPageParametres);
 
-// 		boutonControles = boutonControles.GetComponent<Button>();
-// 		boutonControles.onClick.AddListener(ChargerPageControles);
-//      }
+        // public void ChargerSceneCode3()
+        // {
+        //     SceneManager.LoadScene("Code3");
+        // }
 
-//     public void ChargerSceneCode3()
-//     {
-//         SceneManager.LoadScene("Code3");
-//     }
+        public void JouerSonPapier(){
+            AudioSource.PlayOneShot(sonPapier);
+
+            Debug.Log ("son Joué");
+        }
     
-        public void Quitter() {
-        Application.Quit();
+        public void Quitter(){
+            Application.Quit();
 
-        Debug.Log ("Tu as quitté le jeu");
+            Debug.Log ("Tu as quitté le jeu");
         } 
 
 }
