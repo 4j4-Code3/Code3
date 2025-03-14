@@ -21,10 +21,10 @@ public class GestionBoutonsIntro : MonoBehaviour
     //     }
 
 
-    //     // public void ChargerSceneCode3()
-    //     // {
-    //     //     SceneManager.LoadScene("Code3");
-    //     // }
+    // //     // public void ChargerSceneCode3()
+    // //     // {
+    // //     //     SceneManager.LoadScene("Code3");
+    // //     // }
 
     //     public void JouerSonPapier(){
     //         AudioSource.PlayOneShot(sonPapier);
