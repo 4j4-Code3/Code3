@@ -22,7 +22,7 @@ public class GestionRaycastsEnnemis : MonoBehaviour
         {
                 RaycastHit hit;
 
-                if (Physics.SphereCast(transform.position, rayonSphere, direction.normalized, out hit, distanceJoueur, LayerMask.GetMask("Joueur")))
+                if (Physics.SphereCast(transform.position, rayonSphere, direction, out hit, distanceJoueur, LayerMask.GetMask("Joueur")))
                 {
                     joueurVu = true;
                 }
