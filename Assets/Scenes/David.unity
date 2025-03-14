@@ -1829,7 +1829,7 @@ MonoBehaviour:
   vie: 10
   joueur: {fileID: 781689065}
   statsJoueur: {fileID: 11400000, guid: b74a932cc0987544b9256d14ffc53f52, type: 2}
-  colliderAnimation: {fileID: 1702617238}
+  collisionDegat: {fileID: 0}
 --- !u!135 &1702617238
 SphereCollider:
   m_ObjectHideFlags: 0

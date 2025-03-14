@@ -14,7 +14,7 @@ public class ComportementEnnemis : MonoBehaviour
     NavMeshAgent ennemi;
     GestionRaycastsEnnemis gestionRaycastsEnnemis;
 
-    public Collider colliderAnimation;
+    public Collider collisionDegat;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -42,16 +42,15 @@ public class ComportementEnnemis : MonoBehaviour
         ennemi.isStopped = true;
         //D�clencher l'animation d'attaque
         yield return new WaitForSeconds(2f);
-
         ennemi.isStopped = false;
     }
     IEnumerator ReceptionDegat()
     {
         //Activer le collider quand l'animation est censé toucher le joueur
         yield return new WaitForSeconds(1f);
-        colliderAnimation.enabled = true;
+        collisionDegat.enabled = true;
         yield return new WaitForSeconds(1f);
-        colliderAnimation.enabled = false;
+        collisionDegat.enabled = false;
     }
 
     private void OnTriggerEnter(Collider collider)
