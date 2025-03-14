@@ -3,7 +3,7 @@ using UnityEngine;
 public class GestionRaycastsEnnemis : MonoBehaviour
 {
     public Transform joueur;
-    public float porteVision;
+
     public float rayonSphere;
     public bool joueurVu = false;
 
@@ -15,17 +15,18 @@ public class GestionRaycastsEnnemis : MonoBehaviour
     void DetecterJoueur()
     {
         Vector3 direction = joueur.position - transform.position;
-        // Calcule la distance entre le joueur et l'ennemie et la met dans un float
-        float distanceJoueur = direction.magnitude;
+        float distance = direction.magnitude;
 
-        if (distanceJoueur < porteVision)
+        RaycastHit hit;
+
+        if (Physics.SphereCast(transform.position, rayonSphere, direction, out hit, distance, LayerMask.GetMask("Default")))
         {
-                RaycastHit hit;
+            return;
+        }
+        else if (Physics.SphereCast(transform.position, rayonSphere, direction, out hit, distance, LayerMask.GetMask("Joueur")))
+        {
+            joueurVu = true;
+        }
 
-                if (Physics.SphereCast(transform.position, rayonSphere, direction, out hit, distanceJoueur, LayerMask.GetMask("Joueur")))
-                {
-                    joueurVu = true;
-                }
-        }          
     }
 }
