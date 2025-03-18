@@ -46,7 +46,7 @@ public class ComportementEnnemis : MonoBehaviour
     }
     IEnumerator ReceptionDegat()
     {
-        //Activer le collider quand l'animation est censé toucher le joueur
+        //Activer le collider quand l'animation est censée toucher le joueur
         yield return new WaitForSeconds(1f);
         collisionDegat.enabled = true;
         yield return new WaitForSeconds(1f);

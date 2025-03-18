@@ -48,7 +48,7 @@ public class InventaireUI : MonoBehaviour
 
         for (int i = debutIndex; i < finIndex; i++)
             {
-                Item item = inventaire.items[i];
+                ItemData item = inventaire.items[i];
 
                 GameObject cloneIcone = Instantiate(iconePrefab, parentIcone.transform);
                 cloneIcone.GetComponent<Image>().sprite = item.icone;

@@ -17,7 +17,7 @@ public class MagasinUI : MonoBehaviour
 
     void Awake()
     {
-        foreach(Item item in listeItems.itemsAVendre)
+        foreach(ItemData item in listeItems.itemsAVendre)
         {      
             GameObject cloneBouton = Instantiate(boutonPrefab, parentBouton.transform);
             cloneBouton.GetComponent<InfosBoutons>().nomItem.text = item.nom;
@@ -27,7 +27,7 @@ public class MagasinUI : MonoBehaviour
         }    
     }
 
-    private void Acheter(Item item, GameObject bouton)
+    private void Acheter(ItemData item, GameObject bouton)
     {
         if(inventaire.debris >= item.prix)
         {

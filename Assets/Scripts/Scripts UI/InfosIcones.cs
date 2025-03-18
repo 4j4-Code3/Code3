@@ -5,7 +5,7 @@ using TMPro;
 
 public class InfosIcones : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public Item item;
+    public ItemData item;
     public GameObject description;
 
     void Start()
