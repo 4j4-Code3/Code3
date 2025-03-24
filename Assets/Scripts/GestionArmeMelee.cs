@@ -44,9 +44,9 @@ public class GestionArmeMelee : MonoBehaviour
         StopCoroutine(ReceptionDegats());
     }
 
-    void OnTiggerEnter(Collider collider)
+    void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.CompareTag("Ennemis"))
+        if (collider.gameObject.CompareTag("Ennemi"))
         {
             ComportementEnnemis ennemi = collider.gameObject.GetComponent<ComportementEnnemis>();
             ennemi.vie -= armeData.degats;
