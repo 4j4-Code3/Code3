@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeplacementsJoueur : MonoBehaviour
+public class DeplacementsJoueur : MonoBehaviour, IGestionnaireSauvegardes
 {
     private new Rigidbody rigidbody;
     private float touchesVerticals;
@@ -24,13 +24,20 @@ public class DeplacementsJoueur : MonoBehaviour
     // Quand on saute la gravité est ralentie
     public float diviseurGravite = 0.8f;
 
+    // Position Joueur
+    Transform transformJoueur;
+    Vector3 positionJoueur;
+
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+        transformJoueur = GetComponent<Transform>();
     }
 
-    void Update()
+    public void Update()
     {
+        positionJoueur = transformJoueur.position;
+
         touchesVerticals = Input.GetAxis("Vertical");
         touchesHorizontals = Input.GetAxis("Horizontal");
 
@@ -44,6 +51,16 @@ public class DeplacementsJoueur : MonoBehaviour
         {
             TournerX();
         }
+    }
+
+    public void ChargerDonnees(DataJeu donnees)
+    {
+        this.positionJoueur = donnees.positionJoueur;
+    }
+
+    public void SauvegarderDonnes( ref DataJeu donnees)
+    {
+        donnees.positionJoueur = this.positionJoueur;
     }
 
     void Deplacements()

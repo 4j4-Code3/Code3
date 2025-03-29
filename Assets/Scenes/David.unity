@@ -1390,6 +1390,7 @@ MonoBehaviour:
   magasinUI: {fileID: 1822462811}
   multiplicateurGravite: 2
   diviseurGravite: 0.5
+  transformJoueur: {fileID: 781689071}
 --- !u!54 &781689067
 Rigidbody:
   m_ObjectHideFlags: 0

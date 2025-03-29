@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Linq;
 using System.Collections.Generic;
+using System;
 
 public class GestionnaireSauvegardes : MonoBehaviour
 {
@@ -29,10 +30,29 @@ public class GestionnaireSauvegardes : MonoBehaviour
             Debug.Log("Aucune donnée trouvée. Les données sont initialisées aux valeurs par défaut.");
             NouvellePartie();
         }
+
+        foreach (IGestionnaireSauvegardes dataPersistenceObj in dataPersistenceObjects)
+        {
+            dataPersistenceObj.ChargerDonnees(dataJeu);
+        }
+
+        Debug.Log("position chargé "+ dataJeu.positionJoueur);
     }
 
     public void SauvegarderPartie()
     {
+        foreach (IGestionnaireSauvegardes dataPersistenceObj in dataPersistenceObjects)
+        {
+            dataPersistenceObj.SauvegarderDonnes(ref dataJeu);
+        }
 
+        Debug.Log("position sauvegardé "+ dataJeu.positionJoueur);
+    }
+
+    private List<IGestionnaireSauvegardes> FindAllDataPersistenceObjects()
+    {
+        IEnumerable<IGestionnaireSauvegardes> dataPersistenceObjects = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None).OfType<IGestionnaireSauvegardes>();
+        
+        return new List<IGestionnaireSauvegardes>(dataPersistenceObjects);
     }
 }

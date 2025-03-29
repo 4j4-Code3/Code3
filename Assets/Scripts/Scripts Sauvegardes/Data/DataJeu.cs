@@ -4,6 +4,7 @@ using UnityEngine;
 public class DataJeu
 {
     public int nombreMorts;
+    public Vector3 positionJoueur;
 
 // Valeurs initiales quand on commence une partie
     public DataJeu()

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class MenuUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+public class MenuUI : MonoBehaviour
 {
     private bool pause = false;
 
@@ -19,23 +19,19 @@ public class MenuUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     void Pause()
     {
         pause = !pause;
-
         Time.timeScale = pause ? 0 : 1;
-
         menuPause.SetActive(pause);
-    }
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-       
-    }
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        
-    }
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        
+        if(pause)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
     }
 }
 
