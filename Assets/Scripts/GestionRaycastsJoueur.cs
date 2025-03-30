@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using Unity.Mathematics;
-using System.Data;
-using Unity.VisualScripting;
+
 
 public class GestionRaycastsJoueur : MonoBehaviour
 {
@@ -16,10 +12,13 @@ public class GestionRaycastsJoueur : MonoBehaviour
     
     public bool estArme;
 
+    private bool regardeRigidbody;
+
     // Start is called before the first frame update
     void Start()
     {
         estArme = false;
+        regardeRigidbody = false;
     }
 
     // Update is called once per frame
@@ -27,6 +26,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
     {
         RaycastsInteractions();
 
+        // Lâcher arme
         if (Input.GetKeyDown(KeyCode.Q) && estArme)
         {
             Transform infoEnfant = Camera.main.transform.GetChild(0);
@@ -53,6 +53,35 @@ public class GestionRaycastsJoueur : MonoBehaviour
             texteInteraction.text = "";
         }
 
+        // Prendre objets
+        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, 10, LayerMask.GetMask("ObjetRigidbody")))
+        {
+            texteInteraction.text = "E";
+
+            Rigidbody rb = infoCollision.collider.GetComponent<Rigidbody>();
+
+            if (Input.GetKey(KeyCode.E))
+            {
+                if (!regardeRigidbody)
+                {
+                    regardeRigidbody = true;
+                    infoCollision.collider.gameObject.transform.LookAt(camRay.origin);
+                }
+                
+                Vector3 position = Camera.main.transform.position + Camera.main.transform.forward * 3f;
+                rb.MovePosition(position);
+
+                rb.useGravity = false;
+            }
+            else
+            {
+                regardeRigidbody = false;
+
+                rb.useGravity = true;
+            }
+        }
+
+        // Prendre arme
         if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, 10, LayerMask.GetMask("Arme")))
         {
             texteInteraction.text = "E";
