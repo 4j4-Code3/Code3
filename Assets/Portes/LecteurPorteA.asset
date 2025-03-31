@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18d7d0a157be6dc43a9eeddd0636b426, type: 3}
-  m_Name: Inventaire
+  m_Script: {fileID: 11500000, guid: c704bf30af517174784fdb3eafee4171, type: 3}
+  m_Name: LecteurPorteA
   m_EditorClassIdentifier: 
-  items: []
-  debris: 30
+  active: 0
+  lecteur: A

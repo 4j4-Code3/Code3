@@ -102,9 +102,20 @@ public class GestionRaycastsJoueur : MonoBehaviour
                 estArme = true;
             }
         }
-        
+
+        // Prendre clef
+        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, 10, LayerMask.GetMask("Clef")))
+        {
+            texteInteraction.text = "E";
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                
+            }
+        }
+
         // Affichage du UI du magasin
-        if(Physics.Raycast(camRay.origin, camRay.direction, 10, LayerMask.GetMask("Marchand")))
+        if (Physics.Raycast(camRay.origin, camRay.direction, 10, LayerMask.GetMask("Marchand")))
         {
             texteInteraction.text = "E";
 
