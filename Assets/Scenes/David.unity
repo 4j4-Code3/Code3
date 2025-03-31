@@ -529,7 +529,7 @@ GameObject:
   - component: {fileID: 236430502}
   - component: {fileID: 236430501}
   - component: {fileID: 236430505}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Lecteur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2898,7 +2898,7 @@ GameObject:
   - component: {fileID: 1577829917}
   - component: {fileID: 1577829916}
   - component: {fileID: 1577829920}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Porte
   m_TagString: Untagged
   m_Icon: {fileID: 0}

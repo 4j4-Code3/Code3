@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: LecteurPorteA
   m_EditorClassIdentifier: 
   active: 0
-  lecteur: A
+  code: A

@@ -4,5 +4,5 @@ using UnityEngine;
 public class LecteurPorteData : ScriptableObject
 {
     public bool active;
-    public string lecteur;
+    public string code;
 }

@@ -122,6 +122,31 @@ public class GestionRaycastsJoueur : MonoBehaviour
             }
         }
 
+        // Actionner porte
+        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, 10, LayerMask.GetMask("LecteurPorte")))
+        {
+            texteInteraction.text = "E";
+
+            LecteurPorte lecteurPorteComponent = infoCollision.collider.gameObject.GetComponent<LecteurPorte>();
+
+            LecteurPorteData lecteurPorte = lecteurPorteComponent.data;
+
+            bool active = false;
+
+            foreach(ClefData clef in inventaire.items)
+            {
+                if(clef.code == lecteurPorte.code)
+                {
+                    active = true;
+                }
+            }
+
+            if(Input.GetKeyDown(KeyCode.E) && active)
+            {
+                Debug.Log("Yay!" + lecteurPorte.code);
+            }
+        }
+
         // Affichage du UI du magasin
         if (Physics.Raycast(camRay.origin, camRay.direction, 10, LayerMask.GetMask("Marchand")))
         {
