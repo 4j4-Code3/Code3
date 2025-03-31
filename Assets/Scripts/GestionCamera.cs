@@ -14,6 +14,7 @@ public class GestionCamera : MonoBehaviour
     public InventaireUI inventaireUI;
     public MagasinUI magasinUI;
 
+// Gère la rotation y de la caméra
     void Start ()
     {
         Cursor.lockState = CursorLockMode.Locked;

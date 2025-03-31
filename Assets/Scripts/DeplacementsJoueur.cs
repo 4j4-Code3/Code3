@@ -28,6 +28,7 @@ public class DeplacementsJoueur : MonoBehaviour, IGestionnaireSauvegardes
     Transform transformJoueur;
     Vector3 positionJoueur;
 
+// Gère les déplacements du joueur
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
@@ -53,6 +54,7 @@ public class DeplacementsJoueur : MonoBehaviour, IGestionnaireSauvegardes
         }
     }
 
+// Progrès en cours (sauvegarde)
     public void ChargerDonnees(DataJeu donnees)
     {
         this.positionJoueur = donnees.positionJoueur;
@@ -62,7 +64,7 @@ public class DeplacementsJoueur : MonoBehaviour, IGestionnaireSauvegardes
     {
         donnees.positionJoueur = this.positionJoueur;
     }
-
+//
     void Deplacements()
     {
         Vector3 mouvements = (transform.forward * touchesVerticals + transform.right * touchesHorizontals) * vitesse;

@@ -13,6 +13,7 @@ public class GestionArmeMelee : MonoBehaviour
         zoneAttaque.enabled = false;
     }
 
+// Gère les armes de mêlées
     void Update()
     {
         if (Camera.main.transform.childCount != 0)

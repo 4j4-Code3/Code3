@@ -5,6 +5,7 @@ using TMPro;
 
 public class InfosIcones : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    // Gère les icônes qui apparaissent dans l'inventaire
     public ItemData item;
     public GameObject description;
 

@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class ComportementProjectile : MonoBehaviour
 {
+// À mettre sur un projectile
+
+// Gère la destruction des projectiles
+
     // Start is called before the first frame update
     void Start()
     {

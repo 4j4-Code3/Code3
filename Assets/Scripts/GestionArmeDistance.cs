@@ -9,6 +9,7 @@ public class GestionArmeDistance : MonoBehaviour
 
     public GestionRaycastsJoueur armeTenue;
 
+// Gère les armes à distance
     void Start()
     {
         armeTenue = armeTenue.GetComponent<GestionRaycastsJoueur>();

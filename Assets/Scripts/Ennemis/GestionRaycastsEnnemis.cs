@@ -7,6 +7,7 @@ public class GestionRaycastsEnnemis : MonoBehaviour
     public float rayonSphere;
     public bool joueurVu = false;
 
+// Gère la détection du joueur
     void Update()
     {
         DetecterJoueur();

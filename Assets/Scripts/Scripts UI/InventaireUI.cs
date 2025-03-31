@@ -15,6 +15,7 @@ public class InventaireUI : MonoBehaviour
 
     public bool inventaireUIActif = false;
 
+// Gère l'affichage de l'inventaire
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.I) && !inventaireUIActif)
@@ -39,6 +40,7 @@ public class InventaireUI : MonoBehaviour
         }
     }
 
+// Affiche les items dans l'inventaire
     void AfficherItems()
     {
         DetruireItems();

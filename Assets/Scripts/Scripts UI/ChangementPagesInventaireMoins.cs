@@ -8,6 +8,7 @@ public class YourScriptName : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     private Image image;
     private Color couleur;
 
+    // Gère le changement de page vers la page précédente
     void Start()
     {
         image = gameObject.GetComponent<Image>();

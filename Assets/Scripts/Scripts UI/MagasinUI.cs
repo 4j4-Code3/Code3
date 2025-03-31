@@ -15,6 +15,7 @@ public class MagasinUI : MonoBehaviour
 
     public bool magasinUIActif = false;
 
+// Crée un bouton pour chaque item du magasin
     void Awake()
     {
         foreach(ItemData item in listeItems.itemsAVendre)
@@ -27,6 +28,7 @@ public class MagasinUI : MonoBehaviour
         }    
     }
 
+// Permet d'acheter les items du magasin
     private void Acheter(ItemData item, GameObject bouton)
     {
         if(inventaire.debris >= item.prix)

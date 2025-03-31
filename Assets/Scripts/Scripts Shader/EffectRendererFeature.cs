@@ -5,6 +5,13 @@ using UnityEngine.Rendering.RenderGraphModule;
 using UnityEngine.Rendering.RenderGraphModule.Util;
 using System.Diagnostics;
 
+/*
+
+!!! Fait en utilisant un tutoriel de Unity !!!
+
+*/
+
+// Défini un custom render feature
 public class EffectRendererFeature : ScriptableRendererFeature
 {
     class EffectPass : ScriptableRenderPass

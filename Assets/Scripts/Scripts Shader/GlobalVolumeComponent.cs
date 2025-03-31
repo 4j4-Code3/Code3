@@ -1,6 +1,14 @@
 using System;
 using UnityEngine.Rendering;
 
+/*
+
+!!! Fait en utilisant un tutoriel de Unity !!!
+
+*/
+
+// Crée un post-processing volume component
+
 [Serializable]
 [VolumeComponentMenu("Custom/GlobalVolumeComponent")]
 public class GlobalVolumeComponent : VolumeComponent, IPostProcessComponent

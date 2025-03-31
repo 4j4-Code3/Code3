@@ -16,11 +16,19 @@ public class ComportementEnnemis : MonoBehaviour
 
     public Collider collisionDegat;
 
+    private Animator animator;
+
+    
+
+    // Gère le comportement des ennemis en jeu
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         gestionRaycastsEnnemis = GetComponent<GestionRaycastsEnnemis>();
         ennemi = GetComponent<NavMeshAgent>();
+        // animator = GetComponent<Animator>();
+        
         ennemi.isStopped = true;
         actif = false;
     }
@@ -37,11 +45,19 @@ public class ComportementEnnemis : MonoBehaviour
         }
     }
 
+//  AJOUTER ET AJUSTER L'ANIMATION
+
     IEnumerator AnimationAttaque()
     {
         ennemi.isStopped = true;
         //D�clencher l'animation d'attaque
+        /*
+            ICI
+        */
+        // À enlever quand l'animation est ajouter
         yield return new WaitForSeconds(2f);
+        //
+        
         ennemi.isStopped = false;
     }
     IEnumerator ReceptionDegat()

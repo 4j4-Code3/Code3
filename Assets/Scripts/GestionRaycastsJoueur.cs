@@ -144,6 +144,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.E) && active)
             {
                 Debug.Log("Yay! " + lecteurPorte.code);
+                lecteurPorteComponent.porteOuverte = true;
             }
         }
 

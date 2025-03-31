@@ -651,6 +651,7 @@ GameObject:
   - component: {fileID: 158605948}
   - component: {fileID: 158605947}
   - component: {fileID: 158605946}
+  - component: {fileID: 158605951}
   m_Layer: 11
   m_Name: PorteB
   m_TagString: Untagged
@@ -670,6 +671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b8cd241647109a43ae85eaa33c061d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  porteOuverte: 0
   data: {fileID: 11400000, guid: a6e480c6cb35fe94b9d8c15237a427a6, type: 2}
 --- !u!65 &158605947
 BoxCollider:
@@ -760,6 +762,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &158605951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158605945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1769700b6d38e0a4a81155de7b72c6ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lecteurPorteComponent: {fileID: 0}
 --- !u!1 &236430500
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,6 +898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b8cd241647109a43ae85eaa33c061d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  porteOuverte: 0
   data: {fileID: 11400000, guid: 2bd9aace7b95648439cc877d54a9fe32, type: 2}
 --- !u!1 &274861892
 GameObject:
@@ -3142,6 +3158,7 @@ GameObject:
   - component: {fileID: 1577829917}
   - component: {fileID: 1577829916}
   - component: {fileID: 1577829920}
+  - component: {fileID: 1577829921}
   m_Layer: 11
   m_Name: PorteA
   m_TagString: Untagged
@@ -3250,7 +3267,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b8cd241647109a43ae85eaa33c061d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  porteOuverte: 0
   data: {fileID: 11400000, guid: 2bd9aace7b95648439cc877d54a9fe32, type: 2}
+--- !u!114 &1577829921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577829915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1769700b6d38e0a4a81155de7b72c6ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lecteurPorteComponent: {fileID: 0}
 --- !u!1 &1583144704
 GameObject:
   m_ObjectHideFlags: 0
@@ -3656,6 +3687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b8cd241647109a43ae85eaa33c061d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  porteOuverte: 0
   data: {fileID: 11400000, guid: a6e480c6cb35fe94b9d8c15237a427a6, type: 2}
 --- !u!136 &1734484105
 CapsuleCollider:

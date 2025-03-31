@@ -8,6 +8,7 @@ public class ChangementPagesInventairePlus : MonoBehaviour, IPointerEnterHandler
     private Image image;
     private Color couleur;
 
+    // Gère le changement de page vers la page suivante
     void Start()
     {
         image = gameObject.GetComponent<Image>();
