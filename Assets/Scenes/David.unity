@@ -933,6 +933,7 @@ MonoBehaviour:
   texteInteraction: {fileID: 904855148}
   magasinUI: {fileID: 1822462806}
   magasinUIActif: {fileID: 1822462811}
+  inventaire: {fileID: 11400000, guid: dd5b535f144ea174a80e9130146e32b6, type: 2}
   estArme: 0
 --- !u!1 &389554123
 GameObject:
@@ -1493,7 +1494,7 @@ GameObject:
   - component: {fileID: 445229575}
   - component: {fileID: 445229574}
   - component: {fileID: 445229578}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ClefA
   m_TagString: Untagged
   m_Icon: {fileID: 0}

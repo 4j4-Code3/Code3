@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using static UnityEditor.Progress;
 
 
 public class GestionRaycastsJoueur : MonoBehaviour
@@ -9,7 +10,9 @@ public class GestionRaycastsJoueur : MonoBehaviour
     public GameObject magasinUI;
 
     public MagasinUI magasinUIActif;
-    
+
+    public Inventaire inventaire;
+
     public bool estArme;
 
     private bool regardeRigidbody;
@@ -108,9 +111,14 @@ public class GestionRaycastsJoueur : MonoBehaviour
         {
             texteInteraction.text = "E";
 
+            GameObject clef = infoCollision.collider.gameObject;
+
+            Clef clefComponent = infoCollision.collider.gameObject.GetComponent<Clef>();
+
             if (Input.GetKeyDown(KeyCode.E))
             {
-                
+                inventaire.items.Add(clefComponent.clefData);
+                Destroy(clef);
             }
         }
 
