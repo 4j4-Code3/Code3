@@ -45,6 +45,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
         }
     }
 
+// !!! Ajouter les layers aux GameObjects !!! 
     void RaycastsInteractions()
     {
         Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -119,6 +120,22 @@ public class GestionRaycastsJoueur : MonoBehaviour
             {
                 inventaire.items.Add(clefComponent.clefData);
                 Destroy(clef);
+            }
+        }
+
+        // Prendre item
+        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, 10, LayerMask.GetMask("Item")))
+        {
+            texteInteraction.text = "E";
+
+            GameObject item = infoCollision.collider.gameObject;
+
+            Item itemComponent = infoCollision.collider.gameObject.GetComponent<Item>();
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                inventaire.items.Add(itemComponent.itemData);
+                Destroy(item);
             }
         }
 
