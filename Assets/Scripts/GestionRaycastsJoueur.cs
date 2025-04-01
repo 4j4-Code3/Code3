@@ -139,6 +139,20 @@ public class GestionRaycastsJoueur : MonoBehaviour
             }
         }
 
+        // Prendre debris
+        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, 10, LayerMask.GetMask("Debris")))
+        {
+            texteInteraction.text = "E";
+
+            GameObject debris = infoCollision.collider.gameObject;
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                inventaire.debris++;
+                Destroy(debris);
+            }
+        }
+
         // Actionner porte
         if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, 10, LayerMask.GetMask("LecteurPorte")))
         {

@@ -3739,6 +3739,7 @@ MonoBehaviour:
   joueur: {fileID: 781689065}
   statsJoueur: {fileID: 11400000, guid: b74a932cc0987544b9256d14ffc53f52, type: 2}
   collisionDegat: {fileID: 1702617238}
+  debrisMonstre: {fileID: 915861693383971809, guid: 335dd9cc1f616b84287cdc67950e3bbb, type: 3}
 --- !u!135 &1702617238
 SphereCollider:
   m_ObjectHideFlags: 0

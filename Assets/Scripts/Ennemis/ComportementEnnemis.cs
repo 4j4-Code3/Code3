@@ -18,6 +18,8 @@ public class ComportementEnnemis : MonoBehaviour
 
     private Animator animator;
 
+    public GameObject debrisMonstre;
+
     
 
     // Gère le comportement des ennemis en jeu
@@ -43,6 +45,13 @@ public class ComportementEnnemis : MonoBehaviour
             actif = true;
             ennemi.isStopped = false;
         }
+
+        if(vie <= 0)
+        {
+            Instantiate(debrisMonstre, gameObject.transform.position, gameObject.transform.rotation);
+            
+            Destroy(gameObject);
+        }
     }
 
 //  AJOUTER ET AJUSTER L'ANIMATION
@@ -63,7 +72,7 @@ public class ComportementEnnemis : MonoBehaviour
     IEnumerator ReceptionDegat()
     {
         //Activer le collider quand l'animation est censée toucher le joueur
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
         collisionDegat.enabled = true;
         yield return new WaitForSeconds(1f);
         collisionDegat.enabled = false;
