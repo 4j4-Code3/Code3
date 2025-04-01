@@ -7,5 +7,7 @@ public class Inventaire : ScriptableObject
    // Crée un inventaire
    public List<ItemData> items = new List<ItemData>();
    public int debris;
+   public int seringue;
+   public int maxSeringue = 5;
     
 }

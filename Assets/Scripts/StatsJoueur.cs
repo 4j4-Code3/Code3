@@ -6,4 +6,5 @@ public class StatsJoueur : ScriptableObject
 {
     public float radiation;
     public float energie;
+    public int efficaciteSeringue;
 }

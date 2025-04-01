@@ -28,21 +28,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
     void Update()
     {
         RaycastsInteractions();
-
-        // Lâcher arme
-        if (Input.GetKeyDown(KeyCode.Q) && estArme)
-        {
-            Transform infoEnfant = Camera.main.transform.GetChild(0);
-            GameObject enfant = infoEnfant.gameObject;
-            Collider colliderEnfant = enfant.GetComponent<Collider>();
-            Rigidbody rigidbodyEnfant = enfant.GetComponent<Rigidbody>();
-
-            enfant.transform.SetParent(null);
-            colliderEnfant.enabled = true;
-            rigidbodyEnfant.constraints = RigidbodyConstraints.FreezePositionX & RigidbodyConstraints.FreezePositionY & RigidbodyConstraints.FreezePositionZ;
-
-            estArme = false;
-        }
+        LacherArme();
     }
 
 // !!! Ajouter les layers aux GameObjects !!! 
@@ -85,7 +71,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
             }
         }
 
-        // Prendre arme
+        // Prendre arme // PARENTER L'ARME AU HAND BONE !!!!!!!!!!
         if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, 10, LayerMask.GetMask("Arme")))
         {
             texteInteraction.text = "E";
@@ -153,6 +139,26 @@ public class GestionRaycastsJoueur : MonoBehaviour
             }
         }
 
+        // Prendre seringue
+        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, 10, LayerMask.GetMask("Seringue")))
+        {
+            GameObject seringue = infoCollision.collider.gameObject;
+
+            if (inventaire.seringue < inventaire.maxSeringue)
+            {
+                texteInteraction.text = "E";
+                if(Input.GetKeyDown(KeyCode.E))
+                {
+                    inventaire.seringue++;
+                    Destroy(seringue);
+                }
+            }
+            else
+            {
+                texteInteraction.text = "Plus de place!";
+            }
+        }
+
         // Actionner porte
         if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, 10, LayerMask.GetMask("LecteurPorte")))
         {
@@ -205,5 +211,22 @@ public class GestionRaycastsJoueur : MonoBehaviour
         }
 
         Debug.DrawRay(camRay.origin, camRay.direction * 10, Color.yellow);
+    }
+
+    void LacherArme()
+    {
+        if (Input.GetKeyDown(KeyCode.Q) && estArme)
+        {
+            Transform infoEnfant = Camera.main.transform.GetChild(0);
+            GameObject enfant = infoEnfant.gameObject;
+            Collider colliderEnfant = enfant.GetComponent<Collider>();
+            Rigidbody rigidbodyEnfant = enfant.GetComponent<Rigidbody>();
+
+            enfant.transform.SetParent(null);
+            colliderEnfant.enabled = true;
+            rigidbodyEnfant.constraints = RigidbodyConstraints.FreezePositionX & RigidbodyConstraints.FreezePositionY & RigidbodyConstraints.FreezePositionZ;
+
+            estArme = false;
+        }
     }
 }
