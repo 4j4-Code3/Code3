@@ -8,4 +8,5 @@ public class StatsJoueur : ScriptableObject
     public float maxRadiation;
     public float energie;
     public int efficaciteSeringue;
+    public int degats;
 }

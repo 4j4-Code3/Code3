@@ -30,7 +30,7 @@ public class UtilisationSeringue : MonoBehaviour
         // Mettre une animation
         yield return new WaitForSeconds(3f);
         inventaire.seringue--;
-        statsJoueur.radiation -= 5 - statsJoueur.efficaciteSeringue;
+        statsJoueur.radiation -= 5 + statsJoueur.efficaciteSeringue;
         StopCoroutine(AnimationSeringue());
     }
 }

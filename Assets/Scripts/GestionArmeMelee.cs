@@ -6,6 +6,7 @@ public class GestionArmeMelee : MonoBehaviour
     public GestionRaycastsJoueur armeTenue;
     public Collider zoneAttaque;
     public ArmeData armeData;
+    public StatsJoueur statsJoueur;
 
     void Start()
     {
@@ -50,7 +51,7 @@ public class GestionArmeMelee : MonoBehaviour
         if (collider.gameObject.CompareTag("Ennemi"))
         {
             ComportementEnnemis ennemi = collider.gameObject.GetComponent<ComportementEnnemis>();
-            ennemi.vie -= armeData.degats;
+            ennemi.vie -= armeData.degats - statsJoueur.degats;
         }
     }
 }

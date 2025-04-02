@@ -2368,6 +2368,7 @@ MonoBehaviour:
   armeTenue: {fileID: 330585549}
   zoneAttaque: {fileID: 781689076}
   armeData: {fileID: 0}
+  statsJoueur: {fileID: 11400000, guid: b74a932cc0987544b9256d14ffc53f52, type: 2}
 --- !u!135 &781689076
 SphereCollider:
   m_ObjectHideFlags: 0

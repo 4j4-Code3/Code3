@@ -41,10 +41,13 @@ public class MagasinUI : MonoBehaviour
                 statsJoueur.maxRadiation += item.bonus;
                 break;
                 case ItemType.SeringueEfficacite:
+                statsJoueur.efficaciteSeringue += item.bonus;
                 break;
                 case ItemType.SeringueMax:
+                inventaire.maxSeringue += item.bonus;
                 break;
                 case ItemType.Degats:
+                statsJoueur.degats += item.bonus;
                 break;
             }
 
