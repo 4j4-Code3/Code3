@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Inventaire
   m_EditorClassIdentifier: 
   items: []
-  debris: 31
+  debris: 100
   seringue: 5
   maxSeringue: 5

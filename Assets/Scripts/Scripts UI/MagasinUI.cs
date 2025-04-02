@@ -11,6 +11,8 @@ public class MagasinUI : MonoBehaviour
 
     public GameObject boutonPrefab;
     public GameObject parentBouton;
+
+    public StatsJoueur statsJoueur;
     
 
     public bool magasinUIActif = false;
@@ -18,7 +20,7 @@ public class MagasinUI : MonoBehaviour
 // Crée un bouton pour chaque item du magasin
     void Awake()
     {
-        foreach(ItemData item in listeItems.itemsAVendre)
+        foreach(ItemDataMagasin item in listeItems.itemsAVendre)
         {      
             GameObject cloneBouton = Instantiate(boutonPrefab, parentBouton.transform);
             cloneBouton.GetComponent<InfosBoutons>().nomItem.text = item.nom;
@@ -29,10 +31,23 @@ public class MagasinUI : MonoBehaviour
     }
 
 // Permet d'acheter les items du magasin
-    private void Acheter(ItemData item, GameObject bouton)
+    public void Acheter(ItemDataMagasin item, GameObject bouton)
     {
         if(inventaire.debris >= item.prix)
         {
+            switch(item.type)
+            {
+                case ItemType.Radiation:
+                statsJoueur.maxRadiation += item.bonus;
+                break;
+                case ItemType.SeringueEfficacite:
+                break;
+                case ItemType.SeringueMax:
+                break;
+                case ItemType.Degats:
+                break;
+            }
+
             inventaire.debris -= item.prix;
             Destroy(bouton);
 

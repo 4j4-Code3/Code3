@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: StatsJoueur
   m_EditorClassIdentifier: 
   radiation: 0
+  maxRadiation: 25
   energie: 25
   efficaciteSeringue: 0

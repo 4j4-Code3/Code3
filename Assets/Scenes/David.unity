@@ -1401,7 +1401,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 25
   m_WholeNumbers: 0
-  m_Value: 15.49
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2416,9 +2416,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c001a419f950104783a9d841b2d6621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventaire: {fileID: 11400000, guid: dd5b535f144ea174a80e9130146e32b6, type: 2}
   statsJoueur: {fileID: 11400000, guid: b74a932cc0987544b9256d14ffc53f52, type: 2}
-  slider: {fileID: 389554125}
+  barreRadiation: {fileID: 389554125}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -4488,6 +4487,7 @@ MonoBehaviour:
   inventaire: {fileID: 11400000, guid: dd5b535f144ea174a80e9130146e32b6, type: 2}
   boutonPrefab: {fileID: 5167971201349159142, guid: 954a7e0106b9e5842aadd2a7d9fda52f, type: 3}
   parentBouton: {fileID: 667463344}
+  statsJoueur: {fileID: 11400000, guid: b74a932cc0987544b9256d14ffc53f52, type: 2}
   magasinUIActif: 0
 --- !u!1 &1842079266
 GameObject:

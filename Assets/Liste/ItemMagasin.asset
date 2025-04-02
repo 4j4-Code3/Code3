@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef8305585e1809c45a51a6164cb9ba22, type: 3}
   m_Name: ItemMagasin
   m_EditorClassIdentifier: 
-  itemsAVendre: []
+  itemsAVendre:
+  - {fileID: 11400000, guid: 32edfacb9b0fc2e4ebec08fee1556fa0, type: 2}
+  - {fileID: 11400000, guid: 32edfacb9b0fc2e4ebec08fee1556fa0, type: 2}
+  - {fileID: 11400000, guid: 32edfacb9b0fc2e4ebec08fee1556fa0, type: 2}
