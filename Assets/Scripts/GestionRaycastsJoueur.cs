@@ -102,7 +102,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
 
             Clef clefComponent = infoCollision.collider.gameObject.GetComponent<Clef>();
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && clefComponent != null)
             {
                 inventaire.items.Add(clefComponent.clefData);
                 Destroy(clef);

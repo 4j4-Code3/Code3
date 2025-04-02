@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f41c4666acb525547b609a5f11aa4cb4, type: 3}
   m_Name: StatsJoueur
   m_EditorClassIdentifier: 
-  radiation: 20
+  radiation: 0
   energie: 25
   efficaciteSeringue: 0
