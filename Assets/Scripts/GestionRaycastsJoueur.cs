@@ -185,6 +185,19 @@ public class GestionRaycastsJoueur : MonoBehaviour
             }
         }
 
+        // Actionner générateur
+        if (Physics.Raycast(camRay.origin, camRay.direction, 10, LayerMask.GetMask("Generateur")))
+        {
+            texteInteraction.text = "E";
+
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                /*
+                    Quelque chose...
+                */
+            }
+        }
+
         // Affichage du UI du magasin
         if (Physics.Raycast(camRay.origin, camRay.direction, 10, LayerMask.GetMask("Marchand")))
         {
