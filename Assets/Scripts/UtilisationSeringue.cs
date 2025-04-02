@@ -1,10 +1,12 @@
 using System.Collections;
 using UnityEngine;
+using TMPro;
 
 public class UtilisationSeringue : MonoBehaviour
 {
     public Inventaire inventaire;
     public StatsJoueur statsJoueur;
+    public TextMeshProUGUI nombreSeringues;
     private Animator animator;
 
     void Start()
@@ -19,6 +21,8 @@ public class UtilisationSeringue : MonoBehaviour
         {
             StartCoroutine(AnimationSeringue());
         }
+
+        nombreSeringues.text = inventaire.seringue.ToString() + " / " + inventaire.maxSeringue.ToString();
     }
 
     IEnumerator AnimationSeringue()
