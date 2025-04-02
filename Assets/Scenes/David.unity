@@ -2174,6 +2174,7 @@ GameObject:
   - component: {fileID: 781689075}
   - component: {fileID: 781689076}
   - component: {fileID: 781689077}
+  - component: {fileID: 781689078}
   m_Layer: 8
   m_Name: Joueur
   m_TagString: Player
@@ -2403,6 +2404,21 @@ MonoBehaviour:
   inventaire: {fileID: 11400000, guid: dd5b535f144ea174a80e9130146e32b6, type: 2}
   statsJoueur: {fileID: 11400000, guid: b74a932cc0987544b9256d14ffc53f52, type: 2}
   nombreSeringues: {fileID: 1099777257}
+--- !u!114 &781689078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781689065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c001a419f950104783a9d841b2d6621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventaire: {fileID: 11400000, guid: dd5b535f144ea174a80e9130146e32b6, type: 2}
+  statsJoueur: {fileID: 11400000, guid: b74a932cc0987544b9256d14ffc53f52, type: 2}
+  slider: {fileID: 389554125}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
