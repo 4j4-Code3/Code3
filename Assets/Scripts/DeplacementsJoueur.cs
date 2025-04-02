@@ -71,14 +71,14 @@ public class DeplacementsJoueur : MonoBehaviour, IGestionnaireSauvegardes
         rigidbody.linearVelocity = new Vector3(mouvements.x, rigidbody.linearVelocity.y, mouvements.z);
 
 
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            vitesse = 20f;
-        }
-        else
-        {
-            vitesse = 10f;
-        }
+        // if (Input.GetKey(KeyCode.LeftShift))
+        // {
+        //     vitesse = 20f;
+        // }
+        // else
+        // {
+        //     vitesse = 10f;
+        // }
 
         if (Input.GetKeyDown(KeyCode.Space) && estAuSol)
         {
