@@ -17,7 +17,7 @@ public class UtilisationSeringue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.R) && inventaire.seringue > 0)
+        if(Input.GetKeyDown(KeyCode.R) && inventaire.seringue > 0 && statsJoueur.radiation > 0)
         {
             StartCoroutine(AnimationSeringue());
         }
