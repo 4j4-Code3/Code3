@@ -13,16 +13,16 @@ public class DeplacementsJoueur : MonoBehaviour, IGestionnaireSauvegardes
     public float rotationX = 0f;
 
     public float forceSaut = 5f;
-    private bool estAuSol = true;
+    // private bool estAuSol = true;
 
     public InventaireUI inventaireUI;
     public MagasinUI magasinUI;
 
-    // Quand on tombe la gravité est accéléré
-    public float multiplicateurGravite = 2f;
+    // // Quand on tombe la gravité est accéléré
+    // public float multiplicateurGravite = 2f;
 
-    // Quand on saute la gravité est ralentie
-    public float diviseurGravite = 0.8f;
+    // // Quand on saute la gravité est ralentie
+    // public float diviseurGravite = 0.8f;
 
     // Position Joueur
     Transform transformJoueur;
@@ -80,23 +80,23 @@ public class DeplacementsJoueur : MonoBehaviour, IGestionnaireSauvegardes
         //     vitesse = 10f;
         // }
 
-        if (Input.GetKeyDown(KeyCode.Space) && estAuSol)
-        {
-            rigidbody.linearVelocity = new Vector3(rigidbody.linearVelocity.x, forceSaut, rigidbody.linearVelocity.z);
-            estAuSol = false;
-        }
+        // if (Input.GetKeyDown(KeyCode.Space) && estAuSol)
+        // {
+        //     rigidbody.linearVelocity = new Vector3(rigidbody.linearVelocity.x, forceSaut, rigidbody.linearVelocity.z);
+        //     estAuSol = false;
+        // }
         
-        if (!estAuSol)
-        {
-            if (rigidbody.linearVelocity.y > 0)
-            {
-                rigidbody.linearVelocity += Vector3.up * Physics.gravity.y * diviseurGravite * Time.deltaTime;
-            }
-            else
-            {
-                rigidbody.linearVelocity += Vector3.up * Physics.gravity.y * multiplicateurGravite * Time.deltaTime;
-            }
-        }
+        // if (!estAuSol)
+        // {
+        //     if (rigidbody.linearVelocity.y > 0)
+        //     {
+        //         rigidbody.linearVelocity += Vector3.up * Physics.gravity.y * diviseurGravite * Time.deltaTime;
+        //     }
+        //     else
+        //     {
+        //         rigidbody.linearVelocity += Vector3.up * Physics.gravity.y * multiplicateurGravite * Time.deltaTime;
+        //     }
+        // }
     }
 
     void TournerX()
@@ -106,12 +106,12 @@ public class DeplacementsJoueur : MonoBehaviour, IGestionnaireSauvegardes
         transform.localRotation = Quaternion.Euler(0f, rotationX, 0f);
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Sol"))
-        {
-            estAuSol = true;
-        }
-    }
+    // private void OnCollisionEnter(Collision collision)
+    // {
+    //     if (collision.gameObject.CompareTag("Sol"))
+    //     {
+    //         estAuSol = true;
+    //     }
+    // }
 }
 
