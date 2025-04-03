@@ -159,7 +159,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
             }
         }
 
-        // Actionner porte
+        // Actionner porte bloquée
         if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, 10, LayerMask.GetMask("LecteurPorte")))
         {
             texteInteraction.text = "E";
@@ -170,18 +170,31 @@ public class GestionRaycastsJoueur : MonoBehaviour
 
             bool active = false;
 
-            foreach(ClefData clef in inventaire.items)
+            if(lecteurPorte.code != "")
             {
-                if(clef.code == lecteurPorte.code)
+                foreach(ClefData clef in inventaire.items)
                 {
-                    active = true;
+                    if(clef.code == lecteurPorte.code)
+                    {
+                        active = true;
+                    }
+                }
+
+                if(Input.GetKeyDown(KeyCode.E) && active)
+                {
+                    Debug.Log("Yay! " + lecteurPorte.code);
+                    lecteurPorteComponent.porteOuverte = true;
                 }
             }
-
-            if(Input.GetKeyDown(KeyCode.E) && active)
+            else
             {
-                Debug.Log("Yay! " + lecteurPorte.code);
-                lecteurPorteComponent.porteOuverte = true;
+                active = true;
+
+                if(Input.GetKeyDown(KeyCode.E) && active)
+                {
+                    Debug.Log("Yay! vide");
+                    lecteurPorteComponent.porteOuverte = true;
+                }
             }
         }
 
@@ -195,6 +208,20 @@ public class GestionRaycastsJoueur : MonoBehaviour
                 /*
                     Quelque chose...
                 */
+            }
+        }
+
+        // Actionner ascenseur
+        if (Physics.Raycast(camRay.origin, camRay.direction, 10, LayerMask.GetMask("Ascenseur")))
+        {
+            texteInteraction.text = "E";
+
+            bool fonctionne = inventaire.items.Exists(item => item.nom == "Bouton");
+
+            if (Input.GetKeyDown(KeyCode.E) && fonctionne)
+            {
+                inventaire.items.RemoveAll(item => item.nom == "Bouton");
+                Debug.Log("Fonctionne");
             }
         }
 
