@@ -13,6 +13,8 @@ public class GestionRaycastsJoueur : MonoBehaviour
 
     public Inventaire inventaire;
 
+    public GameObject mainDroite;
+
     public bool estArme;
 
     private bool regardeRigidbody;
@@ -82,8 +84,8 @@ public class GestionRaycastsJoueur : MonoBehaviour
                 Collider armeCollider = arme.GetComponent<Collider>();
                 Rigidbody armeRB = arme.GetComponent<Rigidbody>();
                 
-                arme.transform.SetParent(Camera.main.transform);
-                arme.transform.localPosition = new Vector3(0.5f, 0, 0.5f);
+                arme.transform.SetParent(mainDroite.transform);
+                arme.transform.localPosition = new Vector3(0, 0, 0);
                 arme.transform.localRotation = Quaternion.identity;
 
                 armeCollider.enabled = false;
@@ -257,7 +259,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q) && estArme)
         {
-            Transform infoEnfant = Camera.main.transform.GetChild(0);
+            Transform infoEnfant = mainDroite.transform.GetChild(0);
             GameObject enfant = infoEnfant.gameObject;
             Collider colliderEnfant = enfant.GetComponent<Collider>();
             Rigidbody rigidbodyEnfant = enfant.GetComponent<Rigidbody>();

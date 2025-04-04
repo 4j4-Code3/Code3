@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DeplacementsJoueur : MonoBehaviour, IGestionnaireSauvegardes
 {
-    private new Rigidbody rigidbody;
+    public new Rigidbody rigidbody;
     private float touchesVerticals;
     private float touchesHorizontals;
     public float vitesse = 10f;
@@ -17,6 +17,7 @@ public class DeplacementsJoueur : MonoBehaviour, IGestionnaireSauvegardes
 
     public InventaireUI inventaireUI;
     public MagasinUI magasinUI;
+
 
     // // Quand on tombe la gravité est accéléré
     // public float multiplicateurGravite = 2f;
@@ -31,7 +32,7 @@ public class DeplacementsJoueur : MonoBehaviour, IGestionnaireSauvegardes
 // Gère les déplacements du joueur
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        
         transformJoueur = GetComponent<Transform>();
     }
 
