@@ -6,47 +6,36 @@ using UnityEngine.SceneManagement;
 
 public class GestionBoutonsIntro : MonoBehaviour
 {
-    // Définir les boutons du menu principal
-    public Button boutonNouvellePartie;
-    public Button boutonContinuer;
-    public Button boutonParametres;
-    public Button boutonControles;
-    public Button boutonQuitter;
+    // // Définir les boutons du menu principal
+    // public Button boutonNouvellePartie;
+    // public Button boutonContinuer;
+    // public Button boutonParametres;
+    // public Button boutonControles;
+    // public Button boutonQuitter;
 
-    public AudioClip sonPapier;
-    public AudioClip sonClick;
-    
-    public AudioSource audioSource; 
+    // public AudioClip sonPapier;
 
-    void Start()
-    {
-        audioSource = gameObject.GetComponent<AudioSource>();
-
-        // Ajouter des listeners aux boutons
-        // boutonNouvellePartie.onClick.AddListener(ChargerSceneCode3);
-        boutonQuitter.onClick.AddListener(Quitter);
-    }
-
-    // void Update()
-    // {
-    //     // Vérifier le click du joueur
-    //     if (Input.GetMouseButtonDown(0))
-    //     {
-    //         audioSource.PlayOneShot(sonClick);
+	//     void Start (){
+	// 	boutonControles = boutonControles.GetComponent<Button>();
+	// 	boutonControles.onClick.AddListener(JouerSonPapier);
     //     }
-    // }
 
-    // // Charger la scène Code3
-    // public void ChargerSceneCode3()
-    // {
-    //     SceneManager.LoadScene("Code3-e1");
-    // }
 
-    // Pour quitter le jeu
-    public void Quitter()
-    {
-        Application.Quit();
-        Debug.Log("Tu as quitté le jeu");
-    }
+    //     // public void ChargerSceneCode3()
+    //     // {
+    //     //     SceneManager.LoadScene("Code3");
+    //     // }
+
+    //     public void JouerSonPapier(){
+    //         AudioSource.PlayOneShot(sonPapier);
+
+    //         Debug.Log ("son Joué");
+    //     }
+    
+    //     public void Quitter(){
+    //         Application.Quit();
+
+    //         Debug.Log ("Tu as quitté le jeu");
+    //     } 
 
 }
