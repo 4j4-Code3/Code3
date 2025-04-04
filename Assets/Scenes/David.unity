@@ -1718,7 +1718,7 @@ MonoBehaviour:
   angleMaxY: 80
   angleMinY: -30
   rotationY: 0
-  inventaireUI: {fileID: 0}
+  inventaireUI: {fileID: 781689080}
   magasinUI: {fileID: 1822462811}
 --- !u!114 &330585549
 MonoBehaviour:
