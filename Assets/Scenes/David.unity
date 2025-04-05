@@ -1568,6 +1568,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 274861892}
   m_CullTransparentMesh: 1
+--- !u!1 &279937231 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7219794286519600374, guid: 818ff7cf9ccfc174593a868a5f0449c2, type: 3}
+  m_PrefabInstance: {fileID: 1890673855}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -5396,11 +5401,12 @@ GameObject:
   - component: {fileID: 1702617235}
   - component: {fileID: 1702617234}
   - component: {fileID: 1702617233}
-  - component: {fileID: 1702617232}
   - component: {fileID: 1702617236}
   - component: {fileID: 1702617237}
   - component: {fileID: 1702617238}
+  - component: {fileID: 1702617232}
   - component: {fileID: 1702617239}
+  - component: {fileID: 1702617240}
   m_Layer: 0
   m_Name: Ennemi
   m_TagString: Ennemi
@@ -5534,7 +5540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vie: 10
-  joueur: {fileID: 1890673856}
+  joueur: {fileID: 279937231}
   statsJoueur: {fileID: 11400000, guid: b74a932cc0987544b9256d14ffc53f52, type: 2}
   collisionDegat: {fileID: 1702617238}
   debrisMonstre: {fileID: 915861693383971809, guid: 335dd9cc1f616b84287cdc67950e3bbb, type: 3}
@@ -5572,8 +5578,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joueur: {fileID: 1985002755}
-  rayonSphere: 1
+  rayonSphere: 1.5
   joueurVu: 0
+--- !u!54 &1702617240
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702617231}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1727476761
 GameObject:
   m_ObjectHideFlags: 0
@@ -7011,9 +7044,6 @@ PrefabInstance:
       addedObject: {fileID: 1985002758}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 818ff7cf9ccfc174593a868a5f0449c2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1985002759}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 818ff7cf9ccfc174593a868a5f0449c2, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1985002761}
   m_SourcePrefab: {fileID: 100100000, guid: 818ff7cf9ccfc174593a868a5f0449c2, type: 3}
 --- !u!1 &1890673856 stripped
@@ -7415,29 +7445,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 0.59
   m_Center: {x: 0, y: 1.52, z: 0.49}
---- !u!65 &1985002759
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1890673856}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 2, z: 1}
-  m_Center: {x: 0, y: 0.96, z: 0}
 --- !u!143 &1985002761
 CharacterController:
   m_ObjectHideFlags: 0
@@ -7457,7 +7466,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 2
-  m_Radius: 0.5
+  m_Radius: 0.17
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
