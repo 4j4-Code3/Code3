@@ -12,7 +12,7 @@ public class DeplacementsJoueur : MonoBehaviour, IGestionnaireSauvegardes
     private float touchesHorizontals;
     public float vitesse = 10f;
     private Vector3 velocite;
-    private float gravite = -9.3f;
+
 
     public float vitesseSouris = 700f;
     public float rotationX = 0f;
@@ -83,8 +83,6 @@ public class DeplacementsJoueur : MonoBehaviour, IGestionnaireSauvegardes
     {
         Vector3 mouvements = (transform.forward * touchesVerticals + transform.right * touchesHorizontals) * vitesse;
 
-        characterController.Move(mouvements * Time.deltaTime);
-
         if (characterController.isGrounded)
         {
             if (velocite.y < 0)
@@ -94,8 +92,12 @@ public class DeplacementsJoueur : MonoBehaviour, IGestionnaireSauvegardes
         }
         else
         {
-            velocite.y = gravite * Time.deltaTime;
+            velocite.y += Physics.gravity.y * Time.deltaTime;
         }
+
+        mouvements.y = velocite.y;
+
+        characterController.Move(mouvements * Time.deltaTime);
         
     }
 
