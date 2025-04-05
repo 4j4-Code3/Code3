@@ -15,5 +15,5 @@ MonoBehaviour:
   radiation: 0
   maxRadiation: 25
   energie: 25
-  efficaciteSeringue: 0
+  efficaciteSeringue: 5
   degats: 0

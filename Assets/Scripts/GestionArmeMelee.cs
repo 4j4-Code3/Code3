@@ -52,10 +52,13 @@ public class GestionArmeMelee : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.CompareTag("Ennemi"))
+        if (collider.gameObject.CompareTag("Ennemi") && zoneAttaque.enabled == true)
         {
             ComportementEnnemis ennemi = collider.gameObject.GetComponent<ComportementEnnemis>();
-            ennemi.vie -= armeData.degats - statsJoueur.degats;
+            if(armeData != null)
+            {
+                ennemi.vie -= armeData.degats - statsJoueur.degats;
+            }
         }
     }
 

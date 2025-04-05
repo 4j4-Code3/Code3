@@ -174,9 +174,9 @@ public class GestionRaycastsJoueur : MonoBehaviour
 
             if(lecteurPorte.code != "")
             {
-                foreach(ClefData clef in inventaire.items)
+                foreach (var item in inventaire.items)
                 {
-                    if(clef.code == lecteurPorte.code)
+                    if (item is ClefData clef && clef.code == lecteurPorte.code)
                     {
                         active = true;
                     }
@@ -184,7 +184,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
 
                 if(Input.GetKeyDown(KeyCode.E) && active)
                 {
-                    Debug.Log("Yay! " + lecteurPorte.code);
+                    Debug.Log("Porte " + lecteurPorte.code + " ouverte");
                     lecteurPorteComponent.porteOuverte = true;
                 }
             }
@@ -194,7 +194,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
 
                 if(Input.GetKeyDown(KeyCode.E) && active)
                 {
-                    Debug.Log("Yay! vide");
+                    Debug.Log("Porte ouverte");
                     lecteurPorteComponent.porteOuverte = true;
                 }
             }
@@ -223,7 +223,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E) && fonctionne)
             {
                 inventaire.items.RemoveAll(item => item.nom == "Bouton");
-                Debug.Log("Fonctionne");
+                Debug.Log("L'ascenseur fonctionne");
             }
         }
 
