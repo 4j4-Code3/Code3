@@ -7,19 +7,22 @@ public class GestionArmeMelee : MonoBehaviour
     public Collider zoneAttaque;
     public ArmeData armeData;
     public StatsJoueur statsJoueur;
+    public GameObject mainDroite;
+    private Animator animator;
 
     void Start()
     {
         armeTenue = armeTenue.GetComponent<GestionRaycastsJoueur>();
+        animator = GetComponent<Animator>();
         zoneAttaque.enabled = false;
     }
 
 // Gère les armes de mêlées
     void Update()
     {
-        if (Camera.main.transform.childCount != 0)
+        if (mainDroite.transform.childCount == 6)
         {
-            Transform infoEnfant = Camera.main.transform.GetChild(0);
+            Transform infoEnfant = mainDroite.transform.GetChild(mainDroite.transform.childCount - 1);
             GameObject enfant = infoEnfant.gameObject;
             
             Arme armeComponent = enfant.GetComponent<Arme>();
@@ -35,6 +38,7 @@ public class GestionArmeMelee : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Mouse0) && armeTenue.estArme)
         {
             StartCoroutine(ReceptionDegats());
+            AnimationAttaque();
         }
     }
 
@@ -53,5 +57,10 @@ public class GestionArmeMelee : MonoBehaviour
             ComportementEnnemis ennemi = collider.gameObject.GetComponent<ComportementEnnemis>();
             ennemi.vie -= armeData.degats - statsJoueur.degats;
         }
+    }
+
+    void AnimationAttaque()
+    {
+        animator.SetTrigger("attaque");
     }
 }

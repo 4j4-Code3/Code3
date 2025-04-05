@@ -259,7 +259,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q) && estArme)
         {
-            Transform infoEnfant = mainDroite.transform.GetChild(0);
+            Transform infoEnfant = mainDroite.transform.GetChild(mainDroite.transform.childCount - 1);
             GameObject enfant = infoEnfant.gameObject;
             Collider colliderEnfant = enfant.GetComponent<Collider>();
             Rigidbody rigidbodyEnfant = enfant.GetComponent<Rigidbody>();
