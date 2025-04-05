@@ -53,6 +53,10 @@ public class DeplacementsJoueur : MonoBehaviour, IGestionnaireSauvegardes
         {
             mort = true;
         }
+        else
+        {
+            mort = false;
+        }
 
         if (inventaireUI.inventaireUIActif || magasinUI.magasinUIActif)
         {
