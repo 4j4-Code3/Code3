@@ -46,18 +46,15 @@ public class ComportementEnnemis : MonoBehaviour
 
         if(gestionRaycastsEnnemis.joueurVu && !actif)
         {
-            animator.SetBool(marche, true);
             actif = true;
             ennemi.isStopped = false;
+            animator.SetBool(marche, true);
+            Debug.Log("marche");
         }
         else if(statsJoueur.radiation >= statsJoueur.maxRadiation)
         {
             actif = false;
             ennemi.isStopped = true;
-        }
-        else
-        {
-            animator.SetBool(marche, false);
         }
 
         if(vie <= 0)
