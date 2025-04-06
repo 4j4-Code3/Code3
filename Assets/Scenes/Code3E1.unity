@@ -49864,7 +49864,9 @@ MonoBehaviour:
   boiteDialogues: {fileID: 1475275280}
   textComponent: {fileID: 1853613626}
   lignes:
-  - yomen
+  - "Ah, toi\u2026"
+  - "Tout est bien \xE9trange ici, n\u2019est-ce pas ?"
+  - "Les secrets de ce lieu ne se r\xE9v\xE8lent qu\u2019\xE0 ceux qui savent chercher..."
   vitesseTexte: 0.03
 --- !u!114 &2092467984
 MonoBehaviour:
