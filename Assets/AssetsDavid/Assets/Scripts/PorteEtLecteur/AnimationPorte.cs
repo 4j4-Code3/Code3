@@ -14,5 +14,6 @@ public class AnimationPorte : MonoBehaviour
     void Update()
     {
         animator.SetBool("ouvert", lecteurPorteComponent.porteOuverte);
+        Debug.Log($"Porte {gameObject.name} ouverte: {lecteurPorteComponent.porteOuverte}");
     }
 }
