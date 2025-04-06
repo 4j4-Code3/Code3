@@ -62,12 +62,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8db732656112fd4fbb7c8a0e5a2547a, type: 3}
+  m_Script: {fileID: 11500000, guid: 78f506cb15795d140bbf3d02ee0eb879, type: 3}
   m_Name: EffectRendererFeature
   m_EditorClassIdentifier: 
   m_Active: 1
   injectionPoint: 600
-  material: {fileID: 2100000, guid: e52e8a8b54412d9439b7ca0e2b8386c4, type: 2}
+  material: {fileID: 2100000, guid: 92ddb217f84838248b4c6a4bb5206d3c, type: 2}
 --- !u!114 &7833122117494664109
 MonoBehaviour:
   m_ObjectHideFlags: 0
