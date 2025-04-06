@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d596d40c2b70d2458a676ee217a40e9, type: 3}
-  m_Name: Inventaire
+  m_Script: {fileID: 11500000, guid: c704bf30af517174784fdb3eafee4171, type: 3}
+  m_Name: LecteurPorte1
   m_EditorClassIdentifier: 
-  items:
-  - {fileID: 11400000, guid: 693c669930491bf42b510ffcabd3f996, type: 2}
-  debris: 0
-  seringue: 0
-  maxSeringue: 5
+  active: 0
+  code: 

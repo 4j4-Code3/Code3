@@ -196,6 +196,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
                 {
                     Debug.Log("Porte ouverte");
                     lecteurPorteComponent.porteOuverte = true;
+                    infoCollision.collider.gameObject.SetActive(false);
                 }
             }
         }

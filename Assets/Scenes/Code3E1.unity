@@ -16051,7 +16051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   porteOuverte: 0
-  data: {fileID: 11400000, guid: 82006437b9ed2b04dbc1ce1842eda4fb, type: 2}
+  data: {fileID: 11400000, guid: 3b6a8e8cfe87e87428c846456874c825, type: 2}
 --- !u!65 &678847907
 BoxCollider:
   m_ObjectHideFlags: 0
