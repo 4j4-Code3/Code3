@@ -88,5 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae3d9781bbd38c045aba6fecaf4983c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texteDescription: 
   item: {fileID: 0}
+  noteData: {fileID: 0}
+  associatedNoteObject: {fileID: 0}
+  description: {fileID: 0}

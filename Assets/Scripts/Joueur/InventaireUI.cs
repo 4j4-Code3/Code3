@@ -49,14 +49,20 @@ public class InventaireUI : MonoBehaviour
         int finIndex = Mathf.Min(debutIndex + maxItemsParPages, inventaire.items.Count);
 
         for (int i = debutIndex; i < finIndex; i++)
-            {
-                ItemData item = inventaire.items[i];
+        {
+            ItemData item = inventaire.items[i];
 
-                GameObject cloneIcone = Instantiate(iconePrefab, parentIcone.transform);
-                cloneIcone.GetComponent<Image>().sprite = item.icone;
-                InfosIcones infosIcones = cloneIcone.GetComponent<InfosIcones>();
-                infosIcones.item = item;
+            GameObject cloneIcone = Instantiate(iconePrefab, parentIcone.transform);
+            cloneIcone.GetComponent<Image>().sprite = item.icone;
+
+            InfosIcones infos = cloneIcone.GetComponent<InfosIcones>();
+            infos.item = item;
+
+            if (item is NoteData noteData && inventaire.noteMap.TryGetValue(noteData, out var noteObject))
+            {
+                infos.associatedNoteObject = noteObject;
             }
+        }
     }
 
     void DetruireItems()

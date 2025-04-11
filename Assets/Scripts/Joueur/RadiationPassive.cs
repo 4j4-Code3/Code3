@@ -23,6 +23,6 @@ public class RadiationPassive : MonoBehaviour
 
     void Radiation()
     {
-        statsJoueur.radiation += 1f;
+        statsJoueur.radiation += 0f;
     }
 }

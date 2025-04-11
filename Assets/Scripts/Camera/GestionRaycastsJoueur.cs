@@ -122,7 +122,9 @@ public class GestionRaycastsJoueur : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E) && noteComponent != null)
             {
+                inventaire.AjouterNote(noteComponent.noteData, noteComponent.gameObject);
                 inventaire.items.Add(noteComponent.noteData);
+                inventaire.noteMap[noteComponent.noteData] = noteComponent.gameObject;
                 Destroy(note);
             }
         }

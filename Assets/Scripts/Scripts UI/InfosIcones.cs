@@ -6,39 +6,39 @@ using Unity.VisualScripting;
 
 public class InfosIcones : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
-    // Gère les icônes qui apparaissent dans l'inventaire
     public ItemData item;
-    public NoteData note;
-    public GameObject description;
+    public NoteData noteData;
 
+    public GameObject associatedNoteObject; 
+    public GameObject description;
 
     void Start()
     {
-        description = GameObject.Find("Description");
-        description.GetComponent<TextMeshProUGUI>().text = "";
-
-        if(note != null)
+        if (description == null)
         {
-            note.note = GameObject.Find("Note1");
+            description = GameObject.Find("Description");
         }
+        description.GetComponent<TextMeshProUGUI>().text = "";
+        
+
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         description.GetComponent<TextMeshProUGUI>().text = item.description;
     }
+
     public void OnPointerExit(PointerEventData eventData)
     {
         description.GetComponent<TextMeshProUGUI>().text = "";
     }
 
-    public void OnPointerClick(PointerEventData pointerEventData)
+    public void OnPointerClick(PointerEventData eventData)
     {
-
-        if(note != null)
+        if (associatedNoteObject != null)
         {
-            note.note.SetActive(true);
+            associatedNoteObject.SetActive(true);
         }
-        return;
     }
 }
+
