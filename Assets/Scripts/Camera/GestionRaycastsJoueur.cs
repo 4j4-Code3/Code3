@@ -73,7 +73,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
             }
         }
 
-        // Prendre arme // PARENTER L'ARME AU HAND BONE !!!!!!!!!!
+        // Prendre arme
         if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, 10, LayerMask.GetMask("Arme")))
         {
             texteInteraction.text = "E";
@@ -159,6 +159,23 @@ public class GestionRaycastsJoueur : MonoBehaviour
             {
                 texteInteraction.text = "Plus de place!";
             }
+        }
+
+        // Prendre seringue spéciale
+        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, 10, LayerMask.GetMask("SeringueSpeciale")))
+        {
+            GameObject seringue = infoCollision.collider.gameObject;
+
+            Item itemComponent = infoCollision.collider.gameObject.GetComponent<Item>();
+
+            texteInteraction.text = "E";
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                inventaire.items.Add(itemComponent.itemData);
+                inventaire.seringueSpeciale = true;
+                Destroy(seringue);
+            }
+           
         }
 
         // Actionner porte bloquée
