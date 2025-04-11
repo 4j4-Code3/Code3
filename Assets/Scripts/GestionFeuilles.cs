@@ -8,7 +8,7 @@ public class GestionFeuilles : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // Clic gauche
+        if (Input.GetKeyDown(KeyCode.E))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
