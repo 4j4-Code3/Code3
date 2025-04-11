@@ -9,5 +9,7 @@ public class Inventaire : ScriptableObject
    public int debris;
    public int seringue;
    public int maxSeringue = 5;
+
+   public bool seringueSpeciale = false;
     
 }

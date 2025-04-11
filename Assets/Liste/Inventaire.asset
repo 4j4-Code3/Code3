@@ -16,3 +16,4 @@ MonoBehaviour:
   debris: 10
   seringue: 4
   maxSeringue: 5
+  seringueSpeciale: 0
