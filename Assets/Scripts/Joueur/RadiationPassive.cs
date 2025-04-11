@@ -6,16 +6,23 @@ public class RadiationPassive : MonoBehaviour
 
     public StatsJoueur statsJoueur;
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        inventaire.seringueSpeciale = false;
+        InvokeRepeating("Radiation", 0, 2f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(inventaire.seringueSpeciale)
+        {
+            CancelInvoke("Radiation");
+        }
+    }
+
+    void Radiation()
+    {
+        statsJoueur.radiation += 1f;
     }
 }
