@@ -111,6 +111,22 @@ public class GestionRaycastsJoueur : MonoBehaviour
             }
         }
 
+        // Prendre note
+        if(Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, 10, LayerMask.GetMask("Note")))
+        {
+            texteInteraction.text = "E";
+
+            GameObject note = infoCollision.collider.gameObject;
+
+            Note noteComponent = infoCollision.collider.gameObject.GetComponent<Note>();
+
+            if (Input.GetKeyDown(KeyCode.E) && noteComponent != null)
+            {
+                inventaire.items.Add(noteComponent.noteData);
+                Destroy(note);
+            }
+        }
+
         // Prendre item
         if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, 10, LayerMask.GetMask("Item")))
         {
