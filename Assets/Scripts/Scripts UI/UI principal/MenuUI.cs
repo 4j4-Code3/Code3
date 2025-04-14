@@ -42,23 +42,23 @@ public class MenuUI : MonoBehaviour
         
         ChangerLuminosite(savedBrightness);
 
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyUp(KeyCode.Escape))
-        {
-            Pause();
-        }
-
+        appliquer.onClick.AddListener(Appliquer);
         continuer.onClick.AddListener(Continuer);
         parametres.onClick.AddListener(Parametres);
         sauvegarder.onClick.AddListener(Sauvegarder);
         charger.onClick.AddListener(Charger);
         quitter.onClick.AddListener(Quitter);
 
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
+        {
+            Pause();
+        }
+
         menuParametres.SetActive(menuParametresVisible);
-        appliquer.onClick.AddListener(Appliquer);
         
     }
 
@@ -110,6 +110,8 @@ public class MenuUI : MonoBehaviour
     void ChangerVolume(float volume)
     {
         AudioListener.volume = volume;
+        PlayerPrefs.SetFloat("Volume", volume);
+        PlayerPrefs.Save();
     }
     void ChangerLuminosite(float luminosite)
     {
