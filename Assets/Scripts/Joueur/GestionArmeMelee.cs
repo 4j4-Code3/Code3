@@ -9,11 +9,14 @@ public class GestionArmeMelee : MonoBehaviour
     public StatsJoueur statsJoueur;
     public GameObject mainDroite;
     private Animator animator;
+    // private AudioSource audioSource;
+    // public AudioClip sonArme;
 
     void Start()
     {
         armeTenue = armeTenue.GetComponent<GestionRaycastsJoueur>();
         animator = GetComponent<Animator>();
+        // audioSource = GetComponent<AudioSource>();
         zoneAttaque.enabled = false;
     }
 
@@ -39,6 +42,8 @@ public class GestionArmeMelee : MonoBehaviour
         {
             StartCoroutine(ReceptionDegats());
             AnimationAttaque();
+            // audioSource.PlayOneShot(sonArme);
+        
         }
     }
 
@@ -57,7 +62,7 @@ public class GestionArmeMelee : MonoBehaviour
             ComportementEnnemis ennemi = collider.gameObject.GetComponent<ComportementEnnemis>();
             if(armeData != null)
             {
-                ennemi.vie -= armeData.degats - statsJoueur.degats;
+                ennemi.Vie -= armeData.degats - statsJoueur.degats;
             }
         }
     }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Net.NetworkInformation;
 using UnityEngine;
@@ -5,7 +6,26 @@ using UnityEngine.AI;
 
 public class ComportementEnnemis : MonoBehaviour
 {
-    public float vie;
+    private int _vie;
+    public event Action<int> changementVie;
+    public int Vie
+    {
+        get => _vie;
+        set
+        {
+            if(_vie != value)
+            {
+                _vie = value;
+                changementVie?.Invoke(_vie);
+                // audioSource.PlayOneShot(monstreDegats);
+            }
+            if (_vie <= 0)
+            {
+                Mourir();
+            }
+        }
+    }
+
     private bool actif;
 
     public GameObject joueur;
@@ -19,6 +39,10 @@ public class ComportementEnnemis : MonoBehaviour
     private Animator animator;
 
     public GameObject debrisMonstre;
+
+    // private AudioSource audioSource;
+    // public AudioClip monstreDegats;
+    // public AudioClip monstreMort;
 
     
 
@@ -46,12 +70,6 @@ public class ComportementEnnemis : MonoBehaviour
             ennemi.isStopped = false;
         }
 
-        if(vie <= 0)
-        {
-            Instantiate(debrisMonstre, gameObject.transform.position, gameObject.transform.rotation);
-            
-            Destroy(gameObject);
-        }
     }
 
 //  AJOUTER ET AJUSTER L'ANIMATION
@@ -94,5 +112,12 @@ public class ComportementEnnemis : MonoBehaviour
             StartCoroutine(AnimationAttaque());
             StartCoroutine(ReceptionDegat());
         }
+    }
+
+    private void Mourir()
+    {
+        Instantiate(debrisMonstre, transform.position, transform.rotation);
+        // audioSource.PlayOneShot(monstreMort);
+        Destroy(gameObject);
     }
 }
