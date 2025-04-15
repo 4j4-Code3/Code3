@@ -80,28 +80,29 @@ public class MenuUI : MonoBehaviour
         }
     }
 
-    void Continuer()
+    public void Continuer()
     {
         Pause();
+        Debug.Log("oui");
     }
 
-    void Parametres()
+    public void Parametres()
     {
         menuParametresVisible = true;
         menuPause.SetActive(false);
     }
 
-    void Sauvegarder()
+    public void Sauvegarder()
     {
         // Système de sauvegarde
     }
 
-    void Charger()
+    public void Charger()
     {
         // Système de sauvegarde
     }
 
-    void Quitter()
+    public void Quitter()
     {
         Application.Quit();
     }
@@ -121,7 +122,7 @@ public class MenuUI : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    void Appliquer()
+    public void Appliquer()
     {
         menuParametresVisible = false;
         menuPause.SetActive(true);
