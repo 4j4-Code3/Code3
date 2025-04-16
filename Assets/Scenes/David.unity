@@ -1851,7 +1851,6 @@ MonoBehaviour:
   inventaireUI: {fileID: 1890673860}
   magasinUI: {fileID: 1822462811}
   gestionPorteFinale: {fileID: 2063684773}
-  console: {fileID: 2063684768}
   positionBaseCamera: {fileID: 330585546}
 --- !u!114 &330585549
 MonoBehaviour:
@@ -8398,7 +8397,7 @@ GameObject:
   - component: {fileID: 2115170135}
   - component: {fileID: 2115170134}
   - component: {fileID: 2115170133}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: "G\xE9n\xE9rateur"
   m_TagString: Untagged
   m_Icon: {fileID: 0}

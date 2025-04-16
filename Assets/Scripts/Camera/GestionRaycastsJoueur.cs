@@ -18,6 +18,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
     public GestionPorteFinale gestionPorteFinale;
 
     public bool estArme;
+    private bool generateur;
 
     private bool regardeRigidbody;
 
@@ -26,6 +27,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
     {
         estArme = false;
         regardeRigidbody = false;
+        generateur = false;
     }
 
     // Update is called once per frame
@@ -247,6 +249,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
                 /*
                     Quelque chose...
                 */
+                generateur = true;
             }
         }
 
@@ -257,7 +260,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
 
             bool fonctionne = inventaire.items.Exists(item => item.nom == "Bouton");
 
-            if (Input.GetKeyDown(KeyCode.E) && fonctionne)
+            if (Input.GetKeyDown(KeyCode.E) && fonctionne && generateur)
             {
                 inventaire.items.RemoveAll(item => item.nom == "Bouton");
                 Debug.Log("L'ascenseur fonctionne");
