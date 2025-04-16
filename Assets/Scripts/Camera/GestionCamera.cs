@@ -14,18 +14,23 @@ public class GestionCamera : MonoBehaviour
     public InventaireUI inventaireUI;
     public MagasinUI magasinUI;
 
+    public GestionPorteFinale gestionPorteFinale;
+    public Transform positionBaseCamera;
+
 // Gère la rotation y de la caméra
     void Start ()
     {
         Cursor.lockState = CursorLockMode.Locked;
 
         Cursor.visible = false;
+
+        positionBaseCamera.position = Camera.main.transform.position;
     }
     
     // Update is called once per frame
     void Update()
     {
-        if(inventaireUI.inventaireUIActif || magasinUI.magasinUIActif)
+        if (inventaireUI.inventaireUIActif || magasinUI.magasinUIActif || gestionPorteFinale.interagis)
         {
             return;
         }

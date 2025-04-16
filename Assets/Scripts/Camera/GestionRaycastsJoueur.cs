@@ -15,6 +15,8 @@ public class GestionRaycastsJoueur : MonoBehaviour
 
     public GameObject mainDroite;
 
+    public GestionPorteFinale gestionPorteFinale;
+
     public bool estArme;
 
     private bool regardeRigidbody;
@@ -285,6 +287,17 @@ public class GestionRaycastsJoueur : MonoBehaviour
             Cursor.visible = false;
 
             magasinUIActif.magasinUIActif = false;
+        }
+
+        // Interaction Porte Finale
+        if(Physics.Raycast(camRay.origin, camRay.direction, 10, LayerMask.GetMask("ControleFinal")))
+        {
+            texteInteraction.text = "E";
+
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                gestionPorteFinale.InteractionConsole();
+            }
         }
 
         Debug.DrawRay(camRay.origin, camRay.direction * 10, Color.yellow);
