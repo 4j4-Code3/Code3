@@ -15,7 +15,10 @@ public class GestionRaycastsJoueur : MonoBehaviour
 
     public GameObject mainDroite;
 
+    // public GestionPorteFinale gestionPorteFinale;
+
     public bool estArme;
+    private bool generateur;
 
     private bool regardeRigidbody;
 
@@ -24,6 +27,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
     {
         estArme = false;
         regardeRigidbody = false;
+        generateur = false;
     }
 
     // Update is called once per frame
@@ -73,7 +77,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
             }
         }
 
-        // Prendre arme // PARENTER L'ARME AU HAND BONE !!!!!!!!!!
+        // Prendre arme
         if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, 10, LayerMask.GetMask("Arme")))
         {
             texteInteraction.text = "E";
@@ -109,6 +113,24 @@ public class GestionRaycastsJoueur : MonoBehaviour
                 inventaire.items.Add(clefComponent.clefData);
                 Destroy(clef);
             }
+        }
+
+        // Prendre note
+        if(Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, 10, LayerMask.GetMask("Note")))
+        {
+            texteInteraction.text = "E";
+
+            GameObject note = infoCollision.collider.gameObject;
+
+            // Note noteComponent = infoCollision.collider.gameObject.GetComponent<Note>();
+
+            // if (Input.GetKeyDown(KeyCode.E) && noteComponent != null)
+            // {
+            //     inventaire.AjouterNote(noteComponent.noteData, noteComponent.gameObject);
+            //     inventaire.items.Add(noteComponent.noteData);
+            //     inventaire.noteMap[noteComponent.noteData] = noteComponent.gameObject;
+            //     Destroy(note);
+            // }
         }
 
         // Prendre item
@@ -161,7 +183,24 @@ public class GestionRaycastsJoueur : MonoBehaviour
             }
         }
 
-        // Actionner porte
+        // Prendre seringue spéciale
+        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, 10, LayerMask.GetMask("SeringueSpeciale")))
+        {
+            GameObject seringue = infoCollision.collider.gameObject;
+
+            Item itemComponent = infoCollision.collider.gameObject.GetComponent<Item>();
+
+            texteInteraction.text = "E";
+            // if (Input.GetKeyDown(KeyCode.E))
+            // {
+            //     inventaire.items.Add(itemComponent.itemData);
+            //     inventaire.seringueSpeciale = true;
+            //     Destroy(seringue);
+            // }
+           
+        }
+
+        // Actionner porte bloquée
         if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, 10, LayerMask.GetMask("LecteurPorte")))
         {
             texteInteraction.text = "E";
@@ -196,7 +235,6 @@ public class GestionRaycastsJoueur : MonoBehaviour
                 {
                     Debug.Log("Porte ouverte");
                     lecteurPorteComponent.porteOuverte = true;
-                    //infoCollision.collider.gameObject.SetActive(false);
                 }
             }
         }
@@ -211,6 +249,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
                 /*
                     Quelque chose...
                 */
+                generateur = true;
             }
         }
 
@@ -221,7 +260,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
 
             bool fonctionne = inventaire.items.Exists(item => item.nom == "Bouton");
 
-            if (Input.GetKeyDown(KeyCode.E) && fonctionne)
+            if (Input.GetKeyDown(KeyCode.E) && fonctionne && generateur)
             {
                 inventaire.items.RemoveAll(item => item.nom == "Bouton");
                 Debug.Log("L'ascenseur fonctionne");
@@ -251,6 +290,17 @@ public class GestionRaycastsJoueur : MonoBehaviour
             Cursor.visible = false;
 
             magasinUIActif.magasinUIActif = false;
+        }
+
+        // Interaction Porte Finale
+        if(Physics.Raycast(camRay.origin, camRay.direction, 10, LayerMask.GetMask("ControleFinal")))
+        {
+            texteInteraction.text = "E";
+
+            // if(Input.GetKeyDown(KeyCode.E))
+            // {
+            //     gestionPorteFinale.InteractionConsole();
+            // }
         }
 
         Debug.DrawRay(camRay.origin, camRay.direction * 10, Color.yellow);
