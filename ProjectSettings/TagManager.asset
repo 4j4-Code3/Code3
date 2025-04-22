@@ -16,11 +16,11 @@ TagManager:
   - Joueur
   - LecteurPorte
   - Marchand
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Arme
+  - Seringue
+  - Item
+  - Debris
+  - Generateur
   - 
   - 
   - 

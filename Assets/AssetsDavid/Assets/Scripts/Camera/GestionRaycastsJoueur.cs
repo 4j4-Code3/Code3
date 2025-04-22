@@ -15,7 +15,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
 
     public GameObject mainDroite;
 
-    // public GestionPorteFinale gestionPorteFinale;
+    public GestionPorteFinale gestionPorteFinale;
 
     public bool estArme;
     private bool generateur;
@@ -122,15 +122,15 @@ public class GestionRaycastsJoueur : MonoBehaviour
 
             GameObject note = infoCollision.collider.gameObject;
 
-            // Note noteComponent = infoCollision.collider.gameObject.GetComponent<Note>();
+            Note noteComponent = infoCollision.collider.gameObject.GetComponent<Note>();
 
-            // if (Input.GetKeyDown(KeyCode.E) && noteComponent != null)
-            // {
-            //     inventaire.AjouterNote(noteComponent.noteData, noteComponent.gameObject);
-            //     inventaire.items.Add(noteComponent.noteData);
-            //     inventaire.noteMap[noteComponent.noteData] = noteComponent.gameObject;
-            //     Destroy(note);
-            // }
+            if (Input.GetKeyDown(KeyCode.E) && noteComponent != null)
+            {
+                inventaire.AjouterNote(noteComponent.noteData, noteComponent.gameObject);
+                inventaire.items.Add(noteComponent.noteData);
+                inventaire.noteMap[noteComponent.noteData] = noteComponent.gameObject;
+                Destroy(note);
+            }
         }
 
         // Prendre item
@@ -191,12 +191,12 @@ public class GestionRaycastsJoueur : MonoBehaviour
             Item itemComponent = infoCollision.collider.gameObject.GetComponent<Item>();
 
             texteInteraction.text = "E";
-            // if (Input.GetKeyDown(KeyCode.E))
-            // {
-            //     inventaire.items.Add(itemComponent.itemData);
-            //     inventaire.seringueSpeciale = true;
-            //     Destroy(seringue);
-            // }
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                inventaire.items.Add(itemComponent.itemData);
+                inventaire.seringueSpeciale = true;
+                Destroy(seringue);
+            }
            
         }
 
@@ -297,10 +297,10 @@ public class GestionRaycastsJoueur : MonoBehaviour
         {
             texteInteraction.text = "E";
 
-            // if(Input.GetKeyDown(KeyCode.E))
-            // {
-            //     gestionPorteFinale.InteractionConsole();
-            // }
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                gestionPorteFinale.InteractionConsole();
+            }
         }
 
         Debug.DrawRay(camRay.origin, camRay.direction * 10, Color.yellow);
