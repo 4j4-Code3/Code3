@@ -71,7 +71,8 @@ public class ComportementEnnemis : MonoBehaviour
     {
         ennemi.isStopped = true;
         animator.SetTrigger(attaque);
-        yield return new WaitForSeconds(2f);
+        Debug.Log("attack");
+        yield return new WaitForSeconds(1f);
         
         ennemi.isStopped = false;
     }
@@ -90,6 +91,7 @@ public class ComportementEnnemis : MonoBehaviour
         if (collider.gameObject.CompareTag("Player"))
         {
             statsJoueur.radiation += degats;
+            
         }
     }
     private void OnCollisionEnter(Collision collision)
