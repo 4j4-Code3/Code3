@@ -16,7 +16,6 @@ public class Inventaire : ScriptableObject
    public void AjouterNote(NoteData noteData, GameObject noteObject)
     {
         noteMap[noteData] = noteObject;
-        Debug.Log(noteObject);
     }
     
 }
