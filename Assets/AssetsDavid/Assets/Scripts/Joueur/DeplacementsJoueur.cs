@@ -22,22 +22,18 @@ public class DeplacementsJoueur : MonoBehaviour
 
     private Animator animator;
 
-    // Position Joueur
-    Transform transformJoueur;
-    Vector3 positionJoueur;
+   
 
     // Gère les déplacements du joueur
     void Start()
     {
         mort = false;
-        transformJoueur = GetComponent<Transform>();
         animator = GetComponent<Animator>();
         characterController = GetComponent<CharacterController>();
     }
 
     public void Update()
     {
-        positionJoueur = transformJoueur.position;
 
         touchesVerticals = Input.GetAxis("Vertical");
         touchesHorizontals = Input.GetAxis("Horizontal");
