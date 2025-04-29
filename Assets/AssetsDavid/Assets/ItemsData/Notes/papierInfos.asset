@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3977249878533f44a8964035a4816a0, type: 3}
-  m_Name: ClefE
+  m_Script: {fileID: 11500000, guid: 7843bcf69fa9eac40a08f7e3a5f6a420, type: 3}
+  m_Name: papierInfos
   m_EditorClassIdentifier: 
-  nom: Clef E
-  icone: {fileID: 21300000, guid: 6eff1ff2c3380344486f5de19a34971e, type: 3}
-  description: Clef E
-  code: E
+  nom: Papier Infos
+  icone: {fileID: 21300000, guid: a1ff497ac83b9f247a9d444b29f84502, type: 3}
+  description: Je suis une note avec des choses dessus :)

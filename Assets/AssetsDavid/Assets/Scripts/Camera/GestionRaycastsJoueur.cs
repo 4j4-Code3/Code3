@@ -4,6 +4,8 @@ using TMPro;
 
 public class GestionRaycastsJoueur : MonoBehaviour
 {
+    private int distanceRaycasts = 2;
+
     public TextMeshProUGUI texteInteraction;
 
     public GameObject magasinUI;
@@ -43,13 +45,13 @@ public class GestionRaycastsJoueur : MonoBehaviour
 
         RaycastHit infoCollision;
 
-        if (Physics.Raycast(camRay.origin, camRay.direction, 10, LayerMask.GetMask("Default")))
+        if (Physics.Raycast(camRay.origin, camRay.direction, 30, LayerMask.GetMask("Default")))
         {
             texteInteraction.text = "";
         }
 
         // Prendre objets
-        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, 10, LayerMask.GetMask("ObjetRigidbody")))
+        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, distanceRaycasts, LayerMask.GetMask("ObjetRigidbody")))
         {
             texteInteraction.text = "E";
 
@@ -77,7 +79,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
         }
 
         // Prendre arme
-        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, 10, LayerMask.GetMask("Arme")))
+        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, distanceRaycasts, LayerMask.GetMask("Arme")))
         {
             texteInteraction.text = "E";
 
@@ -99,7 +101,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
         }
 
         // Prendre clef
-        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, 10, LayerMask.GetMask("Clef")))
+        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, distanceRaycasts, LayerMask.GetMask("Clef")))
         {
             texteInteraction.text = "E";
 
@@ -115,7 +117,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
         }
 
         // Prendre note
-        if(Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, 10, LayerMask.GetMask("Note")))
+        if(Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, distanceRaycasts, LayerMask.GetMask("Note")))
         {
             texteInteraction.text = "E";
 
@@ -133,7 +135,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
         }
 
         // Prendre item
-        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, 10, LayerMask.GetMask("Item")))
+        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, distanceRaycasts, LayerMask.GetMask("Item")))
         {
             texteInteraction.text = "E";
 
@@ -149,7 +151,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
         }
 
         // Prendre debris
-        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, 10, LayerMask.GetMask("Debris")))
+        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, distanceRaycasts, LayerMask.GetMask("Debris")))
         {
             texteInteraction.text = "E";
 
@@ -163,7 +165,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
         }
 
         // Prendre seringue
-        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, 10, LayerMask.GetMask("Seringue")))
+        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, distanceRaycasts, LayerMask.GetMask("Seringue")))
         {
             GameObject seringue = infoCollision.collider.gameObject;
 
@@ -183,7 +185,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
         }
 
         // Prendre seringue spéciale
-        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, 10, LayerMask.GetMask("SeringueSpeciale")))
+        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, distanceRaycasts, LayerMask.GetMask("SeringueSpeciale")))
         {
             GameObject seringue = infoCollision.collider.gameObject;
 
@@ -200,7 +202,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
         }
 
         // Actionner porte bloquée
-        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, 10, LayerMask.GetMask("LecteurPorte")))
+        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, distanceRaycasts, LayerMask.GetMask("LecteurPorte")))
         {
             texteInteraction.text = "E";
 
@@ -239,7 +241,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
         }
 
         // Actionner générateur
-        if (Physics.Raycast(camRay.origin, camRay.direction, 10, LayerMask.GetMask("Generateur")))
+        if (Physics.Raycast(camRay.origin, camRay.direction, distanceRaycasts, LayerMask.GetMask("Generateur")))
         {
             texteInteraction.text = "E";
 
@@ -253,7 +255,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
         }
 
         // Actionner ascenseur
-        if (Physics.Raycast(camRay.origin, camRay.direction, 10, LayerMask.GetMask("Ascenseur")))
+        if (Physics.Raycast(camRay.origin, camRay.direction, distanceRaycasts, LayerMask.GetMask("Ascenseur")))
         {
             texteInteraction.text = "E";
 
@@ -267,7 +269,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
         }
 
         // Affichage du UI du magasin
-        if (Physics.Raycast(camRay.origin, camRay.direction, 10, LayerMask.GetMask("Marchand")))
+        if (Physics.Raycast(camRay.origin, camRay.direction, distanceRaycasts, LayerMask.GetMask("Marchand")))
         {
             texteInteraction.text = "E";
 
@@ -292,7 +294,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
         }
 
         // Interaction Porte Finale
-        if(Physics.Raycast(camRay.origin, camRay.direction, 10, LayerMask.GetMask("ControleFinal")))
+        if(Physics.Raycast(camRay.origin, camRay.direction, distanceRaycasts, LayerMask.GetMask("ControleFinal")))
         {
             texteInteraction.text = "E";
 
@@ -302,7 +304,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
             }
         }
 
-        Debug.DrawRay(camRay.origin, camRay.direction * 10, Color.yellow);
+        Debug.DrawRay(camRay.origin, camRay.direction * distanceRaycasts, Color.yellow);
     }
 
     void LacherArme()
