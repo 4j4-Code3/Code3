@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeplacementsJoueur : MonoBehaviour, IGestionnaireSauvegardes
+public class DeplacementsJoueur : MonoBehaviour
 {
     public StatsJoueur statsJoueur;
     public bool mort;
@@ -22,22 +22,18 @@ public class DeplacementsJoueur : MonoBehaviour, IGestionnaireSauvegardes
 
     private Animator animator;
 
-    // Position Joueur
-    Transform transformJoueur;
-    Vector3 positionJoueur;
+   
 
     // Gère les déplacements du joueur
     void Start()
     {
         mort = false;
-        transformJoueur = GetComponent<Transform>();
         animator = GetComponent<Animator>();
         characterController = GetComponent<CharacterController>();
     }
 
     public void Update()
     {
-        positionJoueur = transformJoueur.position;
 
         touchesVerticals = Input.GetAxis("Vertical");
         touchesHorizontals = Input.GetAxis("Horizontal");
@@ -66,17 +62,6 @@ public class DeplacementsJoueur : MonoBehaviour, IGestionnaireSauvegardes
         {
             TournerX();
         }
-    }
-
-    // Progrès en cours (sauvegarde)
-    public void ChargerDonnees(DataJeu donnees)
-    {
-        this.positionJoueur = donnees.positionJoueur;
-    }
-
-    public void SauvegarderDonnes(ref DataJeu donnees)
-    {
-        donnees.positionJoueur = this.positionJoueur;
     }
 
     void Deplacements()

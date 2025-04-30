@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d596d40c2b70d2458a676ee217a40e9, type: 3}
   m_Name: Inventaire
   m_EditorClassIdentifier: 
-  items:
-  - {fileID: 11400000, guid: 693c669930491bf42b510ffcabd3f996, type: 2}
+  items: []
   debris: 0
   seringue: 0
   maxSeringue: 5
+  seringueSpeciale: 0
