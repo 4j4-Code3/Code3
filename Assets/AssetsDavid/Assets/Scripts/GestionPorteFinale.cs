@@ -1,39 +1,59 @@
 using UnityEngine;
 using UnityEngine.Animations;
+using TMPro;
+using UnityEngine.UI;
 
 public class GestionPorteFinale : MonoBehaviour
 {    
-    static int chanceMDP;
+    static int chancesCode;
+    private int code = 123;
     public bool interagis = false;
-    public GestionCamera gestionCamera;
+    public GameObject inputCodeObjet;
+    public TMP_InputField inputCode;
 
     void Start()
     {
-        chanceMDP = 3;
+        chancesCode = 3;
+        inputCodeObjet.SetActive(false);
     }
     
     void Update()
     {
-        
+        string input = inputCode.text;
+        GestionCode(input);
     }
 
     public void InteractionConsole()
     {
-        // interagis = !interagis;
-        // Time.timeScale = interagis ? 0 : 1;
+        interagis = !interagis;
+        Time.timeScale = interagis ? 0 : 1;
 
-        // if(interagis)
-        // {
-        //     Transform infoEnfant = gameObject.transform.GetChild(0);
-        //     GameObject enfant = infoEnfant.gameObject;
-        //     Transform positionCameraConsole = enfant.transform;
+        if(interagis)
+        {
+            inputCodeObjet.SetActive(true);
+        }
+        else
+        {
+            inputCodeObjet.SetActive(false);
+        }
+    }
 
-        //     Camera.main.transform.position = positionCameraConsole.position;
-        // }
-        // else
-        // {
-        //     Camera.main.transform.position = gestionCamera.positionBaseCamera.position;
-        //     Debug.Log("oui");
-        // }
+    void GestionCode(string input)
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            if (int.TryParse(input, out int codeEntre))
+            {
+                if (codeEntre == code)
+                {
+                    Debug.Log("Bon Code");
+                }
+                else
+                {
+                    Debug.Log("Mauvais Code");
+                    chancesCode--;
+                }
+            }
+        }
     }
 }

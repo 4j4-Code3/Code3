@@ -9,6 +9,6 @@ public class AffichageDebris : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        nombreDebris.text = inventaire.debris.ToString();
+        nombreDebris.text = inventaire.debris.ToString() + " débris";
     }
 }
