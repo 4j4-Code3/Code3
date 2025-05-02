@@ -2,12 +2,15 @@ using UnityEngine;
 using UnityEngine.Animations;
 using TMPro;
 using UnityEngine.UI;
+using System.Collections;
 
 public class GestionPorteFinale : MonoBehaviour
 {    
     static int chancesCode;
     private int code = 123;
     public bool interagis = false;
+    private bool activerMauvaiseFin = false;
+
     public GameObject inputCodeObjet;
     public TMP_InputField inputCode;
 
@@ -55,5 +58,22 @@ public class GestionPorteFinale : MonoBehaviour
                 }
             }
         }
+
+        if(chancesCode <= 0 && !activerMauvaiseFin)
+        {
+            activerMauvaiseFin = true;
+            StartCoroutine(MauvaiseFin());
+        }
+    }
+
+    IEnumerator MauvaiseFin()
+    {
+        Debug.Log("Bloop Bloop Bloop");
+        yield return new WaitForSeconds(3);
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #else
+        Application.Quit();
+        #endif
     }
 }

@@ -7,7 +7,7 @@ public class GestionCamera : MonoBehaviour
     public float vitesseSouris = 100f;
     
     public float angleMaxY = 80f;
-    public float angleMinY = -30f;
+    public float angleMinY = -35f;
 
     public float rotationY = 0f;
 
