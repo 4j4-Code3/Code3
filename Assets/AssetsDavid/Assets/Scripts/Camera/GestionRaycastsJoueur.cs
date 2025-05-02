@@ -298,9 +298,18 @@ public class GestionRaycastsJoueur : MonoBehaviour
         {
             texteInteraction.text = "E";
 
-            if(Input.GetKeyDown(KeyCode.E))
+            if(Input.GetKeyDown(KeyCode.E) && !gestionPorteFinale.interagis)
             {
                 gestionPorteFinale.InteractionConsole();
+                texteInteraction.text = "";
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+            else if(Input.GetKeyDown(KeyCode.Q) && gestionPorteFinale.interagis)
+            {
+                gestionPorteFinale.InteractionConsole();
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
             }
         }
 
