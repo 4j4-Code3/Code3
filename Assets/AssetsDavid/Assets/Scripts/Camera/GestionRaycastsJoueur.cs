@@ -45,7 +45,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
 
         RaycastHit infoCollision;
 
-        if (Physics.Raycast(camRay.origin, camRay.direction, 30, LayerMask.GetMask("Default")))
+        if (Physics.Raycast(camRay.origin, camRay.direction, distanceRaycasts+28, LayerMask.GetMask("Default")))
         {
             texteInteraction.text = "";
         }
@@ -79,7 +79,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
         }
 
         // Prendre arme
-        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, distanceRaycasts, LayerMask.GetMask("Arme")))
+        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, distanceRaycasts+4, LayerMask.GetMask("Arme")))
         {
             texteInteraction.text = "E";
 
@@ -90,8 +90,8 @@ public class GestionRaycastsJoueur : MonoBehaviour
                 Rigidbody armeRB = arme.GetComponent<Rigidbody>();
                 
                 arme.transform.SetParent(mainDroite.transform);
-                arme.transform.localPosition = new Vector3(0, 0, 0);
-                arme.transform.localRotation = Quaternion.identity;
+                arme.transform.localPosition = new Vector3(0.24f, 0.07f, 0.21f);
+                arme.transform.localRotation = Quaternion.Euler(90, 0, 0);
 
                 armeCollider.enabled = false;
                 armeRB.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
