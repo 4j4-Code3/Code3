@@ -19,18 +19,17 @@ public class UtilisationSeringue : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.R) && inventaire.seringue > 0 && statsJoueur.radiation > 0)
         {
-            StartCoroutine(AnimationSeringue());
+            StartCoroutine(UtiliserSeringue());
         }
 
         nombreSeringues.text = inventaire.seringue.ToString() + " / " + inventaire.maxSeringue.ToString() + " seringues";
     }
 
-    IEnumerator AnimationSeringue()
+    IEnumerator UtiliserSeringue()
     {
-        // Mettre une animation
-        yield return new WaitForSeconds(3f);
+        yield return null;
         inventaire.seringue--;
         statsJoueur.radiation -= 5 + statsJoueur.efficaciteSeringue;
-        StopCoroutine(AnimationSeringue());
+        StopCoroutine(UtiliserSeringue());
     }
 }
