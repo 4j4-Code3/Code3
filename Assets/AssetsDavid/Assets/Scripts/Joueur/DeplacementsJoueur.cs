@@ -12,6 +12,8 @@ public class DeplacementsJoueur : MonoBehaviour
     private float touchesHorizontals;
     public float vitesse = 10f;
     private Vector3 velocite;
+    public Transform dataTransform;
+
 
 
     public float vitesseSouris = 700f;
@@ -62,6 +64,9 @@ public class DeplacementsJoueur : MonoBehaviour
         {
             TournerX();
         }
+
+        dataTransform.position = gameObject.transform.position;
+        dataTransform.rotation = gameObject.transform.rotation;
     }
 
     void Deplacements()

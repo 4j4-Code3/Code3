@@ -12,9 +12,6 @@ public class MenuUI : MonoBehaviour
 
     public Button continuer;
     public Button parametres;
-    public Button sauvegarder;
-    public Button charger;
-    public Button quitter;
 
     public bool menuParametresVisible;
 
@@ -69,9 +66,6 @@ public class MenuUI : MonoBehaviour
 
         continuer.onClick.AddListener(Continuer);
         parametres.onClick.AddListener(Parametres);
-        sauvegarder.onClick.AddListener(Sauvegarder);
-        charger.onClick.AddListener(Charger);
-        quitter.onClick.AddListener(Quitter);
 
         menuParametres.SetActive(menuParametresVisible);
         appliquer.onClick.AddListener(Appliquer);
@@ -107,24 +101,6 @@ public class MenuUI : MonoBehaviour
         menuPause.SetActive(false);
     }
 
-    void Sauvegarder()
-    {
-        // Système de sauvegarde
-    }
-
-    void Charger()
-    {
-        // Système de sauvegarde
-    }
-
-    void Quitter()
-    {
-        #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-        #else
-        Application.Quit();
-        #endif
-    }
 
     // Paramètres
     void ChangerVolume(float volume)
