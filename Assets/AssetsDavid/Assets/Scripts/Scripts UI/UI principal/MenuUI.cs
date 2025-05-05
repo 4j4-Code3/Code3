@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements.Experimental;
 
@@ -24,23 +25,38 @@ public class MenuUI : MonoBehaviour
     public Slider luminosite;
     public Light lumierePrincipale;
 
+    public Slider sensibiliteX;
+    public DeplacementsJoueur deplacementsJoueur;
+
+    public Slider sensibiliteY;
+    public GestionCamera gestionCamera;
+    
+
     public Button appliquer;
 
     void Start()
     {
         menuParametresVisible = false;
 
-        float volumeSauvegarder = PlayerPrefs.GetFloat("Volume", 1.0f);
+        float volumeSauvegarde = PlayerPrefs.GetFloat("Volume", 1.0f);
 
-        volume.value = volumeSauvegarder;
+        volume.value = volumeSauvegarde;
         volume.onValueChanged.AddListener(ChangerVolume);
 
-        float savedBrightness = PlayerPrefs.GetFloat("Brightness", 2.0f);
-        luminosite.value = savedBrightness;
+        float luminositeSauvegarde = PlayerPrefs.GetFloat("Luminosite", 2.0f);
+        luminosite.value = luminositeSauvegarde;
         
         luminosite.onValueChanged.AddListener(ChangerLuminosite);
-        
-        ChangerLuminosite(savedBrightness);
+        ChangerLuminosite(luminositeSauvegarde);
+
+        float sensibiliteXSauvegarde = PlayerPrefs.GetFloat("SensibiliteX", deplacementsJoueur.vitesseSouris);
+        sensibiliteX.value = sensibiliteXSauvegarde;
+        sensibiliteX.onValueChanged.AddListener(ChangerSensibiliteX);
+
+        float sensibiliteYSauvegarde = PlayerPrefs.GetFloat("SensibiliteY", gestionCamera.vitesseSouris);
+        sensibiliteY.value = sensibiliteYSauvegarde;
+        sensibiliteY.onValueChanged.AddListener(ChangerSensibiliteY);
+
 
     }
 
@@ -103,7 +119,11 @@ public class MenuUI : MonoBehaviour
 
     void Quitter()
     {
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #else
         Application.Quit();
+        #endif
     }
 
     // Paramètres
@@ -115,12 +135,22 @@ public class MenuUI : MonoBehaviour
     {
         lumierePrincipale.intensity = luminosite;
 
-        PlayerPrefs.SetFloat("Brightness", luminosite);
-        PlayerPrefs.Save();
+        PlayerPrefs.SetFloat("Luminosite", luminosite);
+    }
+    void ChangerSensibiliteX(float valeur)
+    {
+        deplacementsJoueur.vitesseSouris = valeur;
+        PlayerPrefs.SetFloat("SensibiliteX", valeur);
+    }
+    void ChangerSensibiliteY(float valeur)
+    {
+        gestionCamera.vitesseSouris = valeur;
+        PlayerPrefs.SetFloat("SensibiliteY", valeur);
     }
 
     void Appliquer()
     {
+        PlayerPrefs.Save();
         menuParametresVisible = false;
         menuPause.SetActive(true);
     }
