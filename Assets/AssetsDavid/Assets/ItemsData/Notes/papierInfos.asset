@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7843bcf69fa9eac40a08f7e3a5f6a420, type: 3}
   m_Name: papierInfos
   m_EditorClassIdentifier: 
+  ID: a79f231b-3e8c-4e69-a720-624a123e49a2
   nom: Papier Infos
   icone: {fileID: 21300000, guid: a1ff497ac83b9f247a9d444b29f84502, type: 3}
   description: Je suis une note avec des choses dessus :)

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6817676a83c99bd4ea038360ca15232c, type: 3}
   m_Name: Hache
   m_EditorClassIdentifier: 
+  ID: ebb275b9-ea51-41e6-bca0-0f557ce99792
   nom: Hache
   icone: {fileID: 21300000, guid: a1ff497ac83b9f247a9d444b29f84502, type: 3}
   description: Une vieille hache... cool.
