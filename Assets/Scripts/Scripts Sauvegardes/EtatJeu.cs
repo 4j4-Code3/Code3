@@ -22,14 +22,14 @@ public class EtatJeu
 {
     public string NomSauvegarde;
     public SerializableVector3 PositionJoueur;
-    // public List<Item> ItemsInventaire;
-    // public List<Item> ItemsMagasin;
+    public List<string> ItemsInventaire;  // store by ID
+    public List<string> ItemsMagasin;
 
     public EtatJeu(string nomSauvegarde, Vector3 positionJoueur)
     {
         NomSauvegarde = nomSauvegarde;
         PositionJoueur = positionJoueur;
-        // ItemsInventaire = new List<Item>();
-        // ItemsMagasin = new List<Item>();
+        ItemsInventaire = new List<string>();
+        ItemsMagasin = new List<string>();
     }
 }
