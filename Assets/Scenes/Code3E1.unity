@@ -48687,9 +48687,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EtatActuel:
     NomSauvegarde: Allo
-    PlayerPosition: {x: 0, y: 0, z: 0}
-    ItemsInventaire: []
-    ItemsMagasin: []
+    PositionJoueur:
+      x: 0
+      y: 0
+      z: 0
+  transformJoueur: {fileID: 1914416099}
+  inventaireActuel: []
+  magasinActuel: []
 --- !u!1 &1853613624
 GameObject:
   m_ObjectHideFlags: 0
@@ -50483,7 +50487,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 818ff7cf9ccfc174593a868a5f0449c2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 23.8
+      value: 21.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 818ff7cf9ccfc174593a868a5f0449c2, type: 3}
       propertyPath: m_LocalPosition.y
