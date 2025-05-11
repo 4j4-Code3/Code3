@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System.Runtime.Serialization;
 
-[System.Serializable]
+[DataContract]
 public struct SerializableVector3
 {
-    public float x, y, z;
+   [DataMember] public float x, y, z;
 
     public SerializableVector3(float rX, float rY, float rZ)
     {
@@ -17,19 +18,22 @@ public struct SerializableVector3
     public static implicit operator SerializableVector3(Vector3 v) => new SerializableVector3(v.x, v.y, v.z);
 }
 
-[System.Serializable]
+[DataContract]
 public class EtatJeu
 {
-    public string NomSauvegarde;
-    public SerializableVector3 PositionJoueur;
-    public List<string> ItemsInventaire;  // store by ID
-    public List<string> ItemsMagasin;
+    [DataMember] public string NomSauvegarde;
+    [DataMember] public SerializableVector3 PositionJoueur;
+    [DataMember] public List<string> ItemsInventaireIDs;
+    [DataMember] public List<string> ItemsMagasinIDs;
 
     public EtatJeu(string nomSauvegarde, Vector3 positionJoueur)
     {
         NomSauvegarde = nomSauvegarde;
         PositionJoueur = positionJoueur;
-        ItemsInventaire = new List<string>();
-        ItemsMagasin = new List<string>();
+        ItemsInventaireIDs = new List<string>();
+        ItemsMagasinIDs = new List<string>();
     }
+
+    public EtatJeu() { }
 }
+
