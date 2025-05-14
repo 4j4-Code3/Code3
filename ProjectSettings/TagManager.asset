@@ -16,15 +16,15 @@ TagManager:
   - Joueur
   - LecteurPorte
   - Marchand
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Arme
+  - Seringue
+  - Item
+  - Debris
+  - Generateur
+  - Clef
+  - Table
+  - Note
+  - ControleFinal
   - 
   - 
   - 

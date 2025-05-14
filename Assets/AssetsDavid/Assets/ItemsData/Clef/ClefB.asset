@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3977249878533f44a8964035a4816a0, type: 3}
   m_Name: ClefB
   m_EditorClassIdentifier: 
+  ID: a8277a0c-06eb-4d14-be74-32c82cfa796c
   nom: ClefB
-  prix: 0
   icone: {fileID: 21300000, guid: a1ff497ac83b9f247a9d444b29f84502, type: 3}
   description: "La clef qui d\xE9bloque la prte B."
   code: B
