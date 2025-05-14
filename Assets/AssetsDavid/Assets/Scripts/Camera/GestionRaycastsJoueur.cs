@@ -45,6 +45,8 @@ public class GestionRaycastsJoueur : MonoBehaviour
             texteInteraction.text = "";
         }
 
+        
+
         // Prendre objets
         if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, 10, LayerMask.GetMask("ObjetRigidbody")))
         {
