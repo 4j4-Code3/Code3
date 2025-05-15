@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Sol
+  - Ennemi
   layers:
   - Default
   - TransparentFX
@@ -11,18 +13,18 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Joueur
+  - LecteurPorte
+  - Marchand
+  - Arme
+  - Seringue
+  - Item
+  - Debris
+  - Generateur
+  - Clef
+  - Table
+  - Note
+  - ControleFinal
   - 
   - 
   - 
