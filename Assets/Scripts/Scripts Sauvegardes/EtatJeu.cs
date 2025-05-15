@@ -18,6 +18,8 @@ public struct SerializableVector3
     public static implicit operator SerializableVector3(Vector3 v) => new SerializableVector3(v.x, v.y, v.z);
 }
 
+
+
 [DataContract]
 public class EtatJeu
 {
