@@ -2,6 +2,7 @@ using System.Collections;
 using System.Net.NetworkInformation;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.XR;
 
 public class ComportementEnnemis : MonoBehaviour
 {
@@ -34,7 +35,8 @@ public class ComportementEnnemis : MonoBehaviour
         gestionRaycastsEnnemis = GetComponent<GestionRaycastsEnnemis>();
         ennemi = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
-        
+        joueur = GameObject.Find("Numero3");
+
         ennemi.isStopped = true;
         actif = false;
     }

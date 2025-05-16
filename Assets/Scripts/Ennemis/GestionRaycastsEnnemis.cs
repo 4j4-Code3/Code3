@@ -2,12 +2,18 @@ using UnityEngine;
 
 public class GestionRaycastsEnnemis : MonoBehaviour
 {
-    public Transform joueur;
+    public Transform transformJoueur;
+    public GameObject joueur;
 
     public float rayonSphere;
     public bool joueurVu = false;
 
-// Gère la détection du joueur
+    // Gère la détection du joueur
+    void Start()
+    {
+        joueur = GameObject.Find("Numero3");
+        transformJoueur = joueur.transform;
+    }
     void Update()
     {
         DetecterJoueur();
@@ -15,7 +21,7 @@ public class GestionRaycastsEnnemis : MonoBehaviour
 
     void DetecterJoueur()
     {
-        Vector3 direction = joueur.position - transform.position;
+        Vector3 direction = transformJoueur.position - transform.position;
         float distance = direction.magnitude;
 
         RaycastHit hit;
