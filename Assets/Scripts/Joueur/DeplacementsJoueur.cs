@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DeplacementsJoueur : MonoBehaviour
 {
@@ -62,6 +63,11 @@ public class DeplacementsJoueur : MonoBehaviour
         else
         {
             TournerX();
+        }
+
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            SceneManager.LoadScene("Code3E2");
         }
     }
 
