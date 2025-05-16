@@ -8034,6 +8034,7 @@ GameObject:
   - component: {fileID: 2003790673}
   - component: {fileID: 2003790672}
   - component: {fileID: 2003790671}
+  - component: {fileID: 2003790675}
   m_Layer: 5
   m_Name: NouvellePartie
   m_TagString: Untagged
@@ -8200,6 +8201,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2003790669}
   m_CullTransparentMesh: 1
+--- !u!114 &2003790675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003790669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a57aec9936c939a43ac5aef3adac137d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  niveauACharger: Code3E1
 --- !u!1 &2041694079
 GameObject:
   m_ObjectHideFlags: 0
