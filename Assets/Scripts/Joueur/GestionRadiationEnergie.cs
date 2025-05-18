@@ -11,7 +11,7 @@ public class GestionRadiationEnergie : MonoBehaviour
     private void Update()
     {
         barreRadiation.value = statsJoueur.radiation;
-        if(barreRadiation.value > statsJoueur.maxRadiation)
+        if (barreRadiation.value > statsJoueur.maxRadiation)
         {
             barreRadiation.value = statsJoueur.maxRadiation;
         }
