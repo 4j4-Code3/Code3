@@ -266,9 +266,14 @@ public class GestionRaycastsJoueur : MonoBehaviour
         // Actionner ascenseur
         if (Physics.Raycast(camRay.origin, camRay.direction, distanceRaycasts, LayerMask.GetMask("Ascenseur")))
         {
-            texteInteraction.text = "E";
-
             bool fonctionne = inventaire.items.Exists(item => item.nom == "Bouton");
+
+            if (!fonctionne || !generateur)
+            {
+                texteInteraction.text = "Il manque quelque chose...";
+            }
+
+            texteInteraction.text = "E";
 
             if (Input.GetKeyDown(KeyCode.E) && fonctionne && generateur)
             {
