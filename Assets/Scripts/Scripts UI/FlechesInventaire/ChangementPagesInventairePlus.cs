@@ -7,6 +7,7 @@ public class ChangementPagesInventairePlus : MonoBehaviour, IPointerEnterHandler
     public InventaireUI inventaireUI;
     private Image image;
     private Color couleur;
+    public Curseur curseur;
 
     // Gère le changement de page vers la page suivante
     void Start()
@@ -19,11 +20,13 @@ public class ChangementPagesInventairePlus : MonoBehaviour, IPointerEnterHandler
     {
         couleur.a = 0;
         image.color = couleur;
+        Cursor.SetCursor(curseur.imageCurseurActif, Vector2.zero, CursorMode.Auto);
     }
     public void OnPointerExit(PointerEventData eventData)
     {
         couleur.a = 1;
         image.color = couleur;
+        Cursor.SetCursor(curseur.imageCurseurDefaut, Vector2.zero, CursorMode.Auto);
     }
     public void OnPointerClick(PointerEventData eventData)
     {

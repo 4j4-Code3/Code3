@@ -16819,6 +16819,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4253931417120615108, guid: e16cc1b8be9796744b8e44545a6aca19, type: 3}
   m_PrefabInstance: {fileID: 564499556}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &568999499
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 568999500}
+  - component: {fileID: 568999501}
+  m_Layer: 0
+  m_Name: GestionCurseur
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &568999500
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568999499}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 909205478}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &568999501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568999499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34118855bb67613498311837ebf99e76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageCurseurDefaut: {fileID: 2800000, guid: c13326af2eb55ee46893154fe4a915da, type: 3}
+  imageCurseurActif: {fileID: 2800000, guid: 94f074e7c9cd7dc4cb629b7cf14ccd76, type: 3}
 --- !u!1001 &569336013
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22369,6 +22415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   magasinUI: {fileID: 752606676}
+  curseur: {fileID: 568999501}
 --- !u!114 &729898516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29710,6 +29757,7 @@ Transform:
   - {fileID: 1222945786}
   - {fileID: 2077530358}
   - {fileID: 1852466969}
+  - {fileID: 568999500}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &909205479
@@ -43408,6 +43456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   magasinUI: {fileID: 752606676}
+  curseur: {fileID: 568999501}
 --- !u!114 &1319495327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45427,6 +45476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   magasinUI: {fileID: 752606676}
+  curseur: {fileID: 568999501}
 --- !u!114 &1359489490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46434,6 +46484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventaireUI: {fileID: 1914416093}
+  curseur: {fileID: 568999501}
 --- !u!1001 &1382612464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57726,6 +57777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventaireUI: {fileID: 1914416093}
+  curseur: {fileID: 568999501}
 --- !u!1001 &1699314176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71166,6 +71218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   magasinUI: {fileID: 752606676}
+  curseur: {fileID: 568999501}
 --- !u!114 &2134677149
 MonoBehaviour:
   m_ObjectHideFlags: 0
