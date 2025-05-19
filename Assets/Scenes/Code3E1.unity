@@ -489,7 +489,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 12241853}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.91615754, b: 0.5518868, a: 1}
@@ -2867,7 +2867,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 87574098}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 0.4528302, g: 0.3313781, b: 0.091847636, a: 1}
@@ -9398,7 +9398,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 299080195}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.91615754, b: 0.5518868, a: 1}
@@ -10461,6 +10461,44 @@ MonoBehaviour:
   inventaire: {fileID: 11400000, guid: 14afe7370b501504088a3114ccd090e9, type: 2}
   mainDroite: {fileID: 1957899617}
   gestionPorteFinale: {fileID: 1222945785}
+  lumieres:
+  - {fileID: 1788378440}
+  - {fileID: 1009368659}
+  - {fileID: 936181070}
+  - {fileID: 2029490627}
+  - {fileID: 12241853}
+  - {fileID: 762630991}
+  - {fileID: 785131284}
+  - {fileID: 374198038}
+  - {fileID: 504790706}
+  - {fileID: 1869454040}
+  - {fileID: 815862552}
+  - {fileID: 1453050135}
+  - {fileID: 1536508900}
+  - {fileID: 1433488472}
+  - {fileID: 851086544}
+  - {fileID: 299080195}
+  - {fileID: 651495421}
+  - {fileID: 700039861}
+  - {fileID: 2088498727}
+  - {fileID: 502618268}
+  - {fileID: 1644024780}
+  - {fileID: 1614193713}
+  - {fileID: 708405975}
+  - {fileID: 946373516}
+  - {fileID: 574906826}
+  - {fileID: 574906826}
+  - {fileID: 2055432042}
+  - {fileID: 339324626}
+  - {fileID: 1025240670}
+  - {fileID: 974224662}
+  - {fileID: 2025016323}
+  - {fileID: 1368825677}
+  - {fileID: 1650875781}
+  - {fileID: 856901344}
+  - {fileID: 87574098}
+  - {fileID: 1199127553}
+  - {fileID: 1302020225}
   estArme: 0
 --- !u!114 &330585549
 MonoBehaviour:
@@ -10885,7 +10923,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 339324626}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 0.4528302, g: 0.3313781, b: 0.091847636, a: 1}
@@ -11902,7 +11940,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 374198038}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.91615754, b: 0.5518868, a: 1}
@@ -15131,7 +15169,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 502618268}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.91615754, b: 0.5518868, a: 1}
@@ -15375,7 +15413,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 504790706}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.91615754, b: 0.5518868, a: 1}
@@ -17033,7 +17071,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 574906826}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.91615754, b: 0.5518868, a: 1}
@@ -19266,7 +19304,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 637623790}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
   m_Name: 
@@ -19700,7 +19738,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 651495421}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.91615754, b: 0.5518868, a: 1}
@@ -21314,7 +21352,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 700039861}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.91615754, b: 0.5518868, a: 1}
@@ -21645,7 +21683,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 708405975}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.91615754, b: 0.5518868, a: 1}
@@ -23774,7 +23812,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 762630991}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.91615754, b: 0.5518868, a: 1}
@@ -24784,7 +24822,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 785131284}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.91615754, b: 0.5518868, a: 1}
@@ -25884,7 +25922,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 815862552}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.91615754, b: 0.5518868, a: 1}
@@ -28022,7 +28060,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851086544}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.91615754, b: 0.5518868, a: 1}
@@ -28316,7 +28354,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 856901344}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 0.4528302, g: 0.3313781, b: 0.091847636, a: 1}
@@ -30271,7 +30309,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 936181070}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.91615754, b: 0.5518868, a: 1}
@@ -30764,7 +30802,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 946373516}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.91615754, b: 0.5518868, a: 1}
@@ -31711,7 +31749,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 974224662}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 0.4528302, g: 0.3313781, b: 0.091847636, a: 1}
@@ -33047,7 +33085,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1009368659}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.91615754, b: 0.5518868, a: 1}
@@ -33539,7 +33577,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1025240670}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 0.4528302, g: 0.3313781, b: 0.091847636, a: 1}
@@ -36806,7 +36844,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c91eb566d871e454eb6669ed12a73dde, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -39102,7 +39140,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1199127553}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 0.4528302, g: 0.3313781, b: 0.091847636, a: 1}
@@ -42662,7 +42700,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1302020225}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 0.4528302, g: 0.3313781, b: 0.091847636, a: 1}
@@ -45871,7 +45909,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1368825677}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 0.4528302, g: 0.3313781, b: 0.091847636, a: 1}
@@ -48234,7 +48272,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1433488472}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.91615754, b: 0.5518868, a: 1}
@@ -48774,7 +48812,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1453050135}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.91615754, b: 0.5518868, a: 1}
@@ -51306,7 +51344,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1536508900}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.91615754, b: 0.5518868, a: 1}
@@ -54117,7 +54155,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1614193713}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.91615754, b: 0.5518868, a: 1}
@@ -55782,7 +55820,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1644024780}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.91615754, b: 0.5518868, a: 1}
@@ -56035,7 +56073,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1650875781}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 0.4528302, g: 0.3313781, b: 0.091847636, a: 1}
@@ -60384,7 +60422,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1788378440}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.91615754, b: 0.5518868, a: 1}
@@ -62779,7 +62817,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1869454040}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.91615754, b: 0.5518868, a: 1}
@@ -67344,7 +67382,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2025016323}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 0.4528302, g: 0.3313781, b: 0.091847636, a: 1}
@@ -67648,7 +67686,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2029490627}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.91615754, b: 0.5518868, a: 1}
@@ -68296,7 +68334,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2055432042}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 0.4528302, g: 0.3313781, b: 0.091847636, a: 1}
@@ -69610,7 +69648,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2088498727}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.91615754, b: 0.5518868, a: 1}

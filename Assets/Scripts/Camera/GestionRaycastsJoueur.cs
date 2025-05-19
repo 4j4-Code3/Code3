@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections.Generic;
 
 
 public class GestionRaycastsJoueur : MonoBehaviour
@@ -17,6 +18,8 @@ public class GestionRaycastsJoueur : MonoBehaviour
     public GameObject mainDroite;
 
     public GestionPorteFinale gestionPorteFinale;
+
+    public List<GameObject> lumieres;
 
     public bool estArme;
     private bool generateur;
@@ -249,10 +252,14 @@ public class GestionRaycastsJoueur : MonoBehaviour
 
             if(Input.GetKeyDown(KeyCode.E))
             {
-                /*
-                    Quelque chose...
-                */
-                generateur = true;
+                if (lumieres.Count > 0)
+                {
+                    foreach (var lumiere in lumieres)
+                    {
+                        lumiere.GetComponent<Light>().enabled = true;
+                    }
+                    generateur = true;
+                }
             }
         }
 
