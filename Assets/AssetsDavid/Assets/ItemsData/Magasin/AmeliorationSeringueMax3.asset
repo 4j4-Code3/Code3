@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce40690754770914080fdf1b91a6fa2f, type: 3}
+  m_Name: AmeliorationSeringueMax3
+  m_EditorClassIdentifier: 
+  ID: 5e422b12-8246-4556-a02e-c58cfca4c8a5
+  nom: AmeliorationSeringueMax1
+  icone: {fileID: 21300000, guid: a1ff497ac83b9f247a9d444b29f84502, type: 3}
+  description: 
+  prix: 10
+  bonus: 3
+  type: 2
