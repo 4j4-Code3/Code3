@@ -7,7 +7,7 @@ using System.Collections;
 public class GestionPorteFinale : MonoBehaviour
 {    
     static int chancesCode;
-    private int code = 123;
+    private int code = 749;
     public bool interagis = false;
     private bool activerMauvaiseFin = false;
 
@@ -16,6 +16,7 @@ public class GestionPorteFinale : MonoBehaviour
 
     void Start()
     {
+        inputCodeObjet = GameObject.Find("Console");
         chancesCode = 3;
         inputCodeObjet.SetActive(false);
     }

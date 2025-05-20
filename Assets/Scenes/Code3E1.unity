@@ -5210,7 +5210,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &158100500
 Transform:
   m_ObjectHideFlags: 0
@@ -6096,7 +6096,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &187155384
 Transform:
   m_ObjectHideFlags: 0
@@ -49923,7 +49923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f33745fcaf99215428b496b7abcf8960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteData: {fileID: 11400000, guid: 3bc3cb4d87f672e44a60008f7155627c, type: 2}
+  noteData: {fileID: 11400000, guid: 5cd9ac66c43bd35449bfeba3686443a6, type: 2}
 --- !u!65 &1482868210
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -56598,6 +56598,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6cfb6ede861d24483bbd9b5831737a23, type: 3}
       propertyPath: m_Name
       value: papierCode
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6cfb6ede861d24483bbd9b5831737a23, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -70629,7 +70633,7 @@ Transform:
   m_GameObject: {fileID: 2111589175}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.48, y: 1.08, z: 51.25}
+  m_LocalPosition: {x: 23.48, y: -1.63, z: 51.25}
   m_LocalScale: {x: 1.548, y: 1.548, z: 1.548}
   m_ConstrainProportionsScale: 0
   m_Children: []
