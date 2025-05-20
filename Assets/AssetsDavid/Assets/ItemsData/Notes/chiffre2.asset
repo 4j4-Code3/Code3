@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0461252cdd6c3934b8588823ba9aea94, type: 3}
-  m_Name: StatsJoueur
+  m_Script: {fileID: 11500000, guid: 7843bcf69fa9eac40a08f7e3a5f6a420, type: 3}
+  m_Name: chiffre2
   m_EditorClassIdentifier: 
-  radiation: 1
-  maxRadiation: 25
-  energie: 0
-  efficaciteSeringue: 5
-  degats: 0
+  ID: 6ef6ba04-5cd1-4dd0-9b86-ce045cfd5720
+  nom: Un chiffre du code
+  icone: {fileID: 21300000, guid: 6eff1ff2c3380344486f5de19a34971e, type: 3}
+  description: 4
