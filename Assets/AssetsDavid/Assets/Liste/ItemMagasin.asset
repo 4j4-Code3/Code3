@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: ItemMagasin
   m_EditorClassIdentifier: 
   itemsAVendre:
-  - {fileID: 11400000, guid: 1290e13e825cc8945a8a5f643d2f6dc0, type: 2}
   - {fileID: 11400000, guid: 32edfacb9b0fc2e4ebec08fee1556fa0, type: 2}
   - {fileID: 11400000, guid: 2da583259584a564bb03c556b45afceb, type: 2}
   - {fileID: 11400000, guid: 6645dbcb5218aec43a9a3f8217e07cd9, type: 2}
@@ -25,3 +24,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 119692dc1499c284e828ec02fc531de3, type: 2}
   - {fileID: 11400000, guid: ec7786afb8452e84abc4779930267114, type: 2}
   - {fileID: 11400000, guid: 65eddcb26839a4a40b34d45fb5d2edd4, type: 2}
+  - {fileID: 11400000, guid: 1290e13e825cc8945a8a5f643d2f6dc0, type: 2}

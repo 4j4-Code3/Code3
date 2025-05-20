@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: AmeliorationDegats2
   m_EditorClassIdentifier: 
   ID: 5f4e6e15-24ff-4b0b-bab8-6344c93c60b3
-  nom: AmeliorationDegats1
+  nom: "Am\xE9lioration d\xE9g\xE2ts II"
   icone: {fileID: 21300000, guid: a1ff497ac83b9f247a9d444b29f84502, type: 3}
-  description: 
-  prix: 10
+  description: "+3 D\xE9g\xE2ts de base!"
+  prix: 2
   bonus: 3
   type: 3

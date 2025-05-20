@@ -24,7 +24,7 @@ public class DeplacementsJoueur : MonoBehaviour
 
     private Animator animator;
 
-   
+
 
     // Gère les déplacements du joueur
     void Start()
@@ -36,6 +36,7 @@ public class DeplacementsJoueur : MonoBehaviour
 
     public void Update()
     {
+        magasinUI = GameObject.Find("MagasinUI")?.GetComponent<MagasinUI>();
 
         touchesVerticals = Input.GetAxis("Vertical");
         touchesHorizontals = Input.GetAxis("Horizontal");
@@ -56,16 +57,17 @@ public class DeplacementsJoueur : MonoBehaviour
             mort = false;
         }
 
-        if (inventaireUI.inventaireUIActif || magasinUI.magasinUIActif)
-        {
-            return;
-        }
-        else
-        {
-            TournerX();
-        }
+        // if (inventaireUI.inventaireUIActif || magasinUI.magasinUIActif)
+        // {
+        //     return;
+        // }
+        // else
+        // {
+        //     TournerX();
+        // }
+        TournerX();
 
-        if(Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.L))
         {
             SceneManager.LoadScene("Code3E2");
         }

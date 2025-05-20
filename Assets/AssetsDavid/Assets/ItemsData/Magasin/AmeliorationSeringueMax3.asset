@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: AmeliorationSeringueMax3
   m_EditorClassIdentifier: 
   ID: 5e422b12-8246-4556-a02e-c58cfca4c8a5
-  nom: AmeliorationSeringueMax1
+  nom: "Am\xE9lioration seringues : Maximum III"
   icone: {fileID: 21300000, guid: a1ff497ac83b9f247a9d444b29f84502, type: 3}
-  description: 
-  prix: 10
+  description: "+3 \xC0 la capacit\xE9 maximale de seringues!"
+  prix: 3
   bonus: 3
   type: 2

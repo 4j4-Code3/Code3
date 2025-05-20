@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GestionCamera : MonoBehaviour
@@ -14,25 +15,29 @@ public class GestionCamera : MonoBehaviour
     public InventaireUI inventaireUI;
     public MagasinUI magasinUI;
 
-// Gère la rotation y de la caméra
-    void Start ()
+    // Gère la rotation y de la caméra
+    void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
 
         Cursor.visible = false;
+
+        magasinUI = GameObject.Find("MagasinUI")?.GetComponent<MagasinUI>();
     }
-    
+
     // Update is called once per frame
     void Update()
     {
-        if(inventaireUI.inventaireUIActif || magasinUI.magasinUIActif)
-        {
-            return;
-        }
-        else
-        {
-            TournerY();
-        }
+        // if (inventaireUI.inventaireUIActif || magasinUI.magasinUIActif)
+        // {
+        //     return;
+        // }
+        // else
+        // {
+        //     TournerY();
+        // }
+        
+        TournerY();
     }
 
 // Gère la rotation de la caméra verticale

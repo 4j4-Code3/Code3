@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: AmeliorationRadiation2
   m_EditorClassIdentifier: 
   ID: e80fe700-f354-45b2-8566-a69479f99707
-  nom: "Am\xE9lioration Radiation 1"
+  nom: "Am\xE9lioration radiation II"
   icone: {fileID: 21300000, guid: a1ff497ac83b9f247a9d444b29f84502, type: 3}
-  description: "Am\xE9lioration Radiation I"
-  prix: 10
+  description: "+10 \xC0 la barre de radiation!"
+  prix: 2
   bonus: 10
   type: 0

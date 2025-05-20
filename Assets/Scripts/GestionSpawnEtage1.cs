@@ -1,20 +1,24 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+using System.Collections;
 
-public class GestionSpawnEtage2 : MonoBehaviour
+public class GestionSpawnEtage1 : MonoBehaviour
 {
+    public GestionRaycastsJoueur gestionRaycastsJoueur;
     public Image image;
     private float duree = 2f;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         GameObject joueur = GameObject.Find("Numero3");
-        GameObject spawn = GameObject.Find("SpawnEtage2");
+        GameObject spawn = GameObject.Find("SpawnEtage1");
         image = GameObject.Find("FonduNoir")?.GetComponent<Image>();
-        
-        joueur.transform.position = spawn.transform.position;
+        gestionRaycastsJoueur = GameObject.Find("Main Camera")?.GetComponent<GestionRaycastsJoueur>();
+
+        if (gestionRaycastsJoueur.generateur && gestionRaycastsJoueur.fonctionne)
+        {
+            joueur.transform.position = spawn.transform.position;
+        }
         StartCoroutine(CommencerFonduInverse());
     }
 
@@ -45,3 +49,4 @@ public class GestionSpawnEtage2 : MonoBehaviour
         image.color = new Color(couleur.r, couleur.g, couleur.b, alphaFin);
     }
 }
+

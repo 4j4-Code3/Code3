@@ -1,6 +1,10 @@
 using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
+using Microsoft.Unity.VisualStudio.Editor;
+using UnityEngine.UI;
+using System.Collections;
+using UnityEngine.SceneManagement;
 
 
 public class GestionRaycastsJoueur : MonoBehaviour
@@ -21,10 +25,13 @@ public class GestionRaycastsJoueur : MonoBehaviour
 
     public List<GameObject> lumieres;
 
-    public bool estArme;
-    private bool generateur;
+    public UnityEngine.UI.Image image;
+    private float duree = 3f;
 
-    bool fonctionne;
+    public bool estArme;
+
+    public bool generateur;
+    public bool fonctionne;
 
     private bool regardeRigidbody;
 
@@ -33,8 +40,9 @@ public class GestionRaycastsJoueur : MonoBehaviour
     {
         estArme = false;
         regardeRigidbody = false;
-        generateur = false;
+        generateur = true;
         fonctionne = false;
+        magasinUI.SetActive(false);
     }
 
     // Update is called once per frame
@@ -44,19 +52,19 @@ public class GestionRaycastsJoueur : MonoBehaviour
         LacherArme();
     }
 
-// !!! Ajouter les layers aux GameObjects !!! 
+    // !!! Ajouter les layers aux GameObjects !!! 
     void RaycastsInteractions()
     {
         Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         RaycastHit infoCollision;
 
-        if (Physics.Raycast(camRay.origin, camRay.direction, distanceRaycasts+28, LayerMask.GetMask("Default")))
+        if (Physics.Raycast(camRay.origin, camRay.direction, distanceRaycasts + 28, LayerMask.GetMask("Default")))
         {
             texteInteraction.text = "";
         }
 
-        
+
 
         // Prendre objets
         if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, distanceRaycasts, LayerMask.GetMask("ObjetRigidbody")))
@@ -72,7 +80,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
                     regardeRigidbody = true;
                     infoCollision.collider.gameObject.transform.LookAt(camRay.origin);
                 }
-                
+
                 Vector3 position = Camera.main.transform.position + Camera.main.transform.forward * 3f;
                 rb.MovePosition(position);
 
@@ -87,16 +95,16 @@ public class GestionRaycastsJoueur : MonoBehaviour
         }
 
         // Prendre arme
-        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, distanceRaycasts+4, LayerMask.GetMask("Arme")))
+        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, distanceRaycasts + 4, LayerMask.GetMask("Arme")))
         {
             texteInteraction.text = "E";
 
-            if(Input.GetKeyDown(KeyCode.E) && !estArme)
+            if (Input.GetKeyDown(KeyCode.E) && !estArme)
             {
                 GameObject arme = infoCollision.collider.gameObject;
                 Collider armeCollider = arme.GetComponent<Collider>();
                 Rigidbody armeRB = arme.GetComponent<Rigidbody>();
-                
+
                 arme.transform.SetParent(mainDroite.transform);
                 arme.transform.localPosition = new Vector3(0.24f, 0.07f, 0.21f);
                 arme.transform.localRotation = Quaternion.Euler(90, 0, 0);
@@ -125,7 +133,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
         }
 
         // Prendre note
-        if(Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, distanceRaycasts, LayerMask.GetMask("Note")))
+        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, distanceRaycasts, LayerMask.GetMask("Note")))
         {
             texteInteraction.text = "E";
 
@@ -180,7 +188,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
             if (inventaire.seringue < inventaire.maxSeringue)
             {
                 texteInteraction.text = "E";
-                if(Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyDown(KeyCode.E))
                 {
                     inventaire.seringue++;
                     Destroy(seringue);
@@ -206,7 +214,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
                 inventaire.seringueSpeciale = true;
                 Destroy(seringue);
             }
-           
+
         }
 
         // Actionner porte bloquée
@@ -220,7 +228,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
 
             bool active = false;
 
-            if(lecteurPorte.code != "")
+            if (lecteurPorte.code != "")
             {
                 foreach (var item in inventaire.items)
                 {
@@ -230,7 +238,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
                     }
                 }
 
-                if(Input.GetKeyDown(KeyCode.E) && active)
+                if (Input.GetKeyDown(KeyCode.E) && active)
                 {
                     Debug.Log("Porte " + lecteurPorte.code + " ouverte");
                     lecteurPorteComponent.porteOuverte = true;
@@ -240,7 +248,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
             {
                 active = true;
 
-                if(Input.GetKeyDown(KeyCode.E) && active)
+                if (Input.GetKeyDown(KeyCode.E) && active)
                 {
                     Debug.Log("Porte ouverte");
                     lecteurPorteComponent.porteOuverte = true;
@@ -253,7 +261,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
         {
             texteInteraction.text = "E";
 
-            if(Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 if (lumieres.Count > 0)
                 {
@@ -285,27 +293,38 @@ public class GestionRaycastsJoueur : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     inventaire.items.RemoveAll(item => item.nom == "Bouton");
+                    StartCoroutine(CommencerFondu());
                     Debug.Log("L'ascenseur fonctionne");
                 }
             }
         }
 
-        // Affichage du UI du magasin
-        if (Physics.Raycast(camRay.origin, camRay.direction, distanceRaycasts, LayerMask.GetMask("Marchand")))
+        // Actionner ascenseur Étage 2
+        if (Physics.Raycast(camRay.origin, camRay.direction, distanceRaycasts, LayerMask.GetMask("Ascenseur2")))
         {
             texteInteraction.text = "E";
-
-            if(Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                magasinUI.SetActive(true);
-
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-
-                magasinUIActif.magasinUIActif = true;
+                StartCoroutine(CommencerFondu());
             }
         }
-        if(Input.GetKeyDown(KeyCode.Q))
+
+        // Affichage du UI du magasin
+            if (Physics.Raycast(camRay.origin, camRay.direction, distanceRaycasts, LayerMask.GetMask("Marchand")))
+            {
+                texteInteraction.text = "E";
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    magasinUI.SetActive(true);
+
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+
+                    magasinUIActif.magasinUIActif = true;
+                }
+            }
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             magasinUI.SetActive(false);
 
@@ -316,18 +335,18 @@ public class GestionRaycastsJoueur : MonoBehaviour
         }
 
         // Interaction Porte Finale
-        if(Physics.Raycast(camRay.origin, camRay.direction, distanceRaycasts, LayerMask.GetMask("ControleFinal")))
+        if (Physics.Raycast(camRay.origin, camRay.direction, distanceRaycasts, LayerMask.GetMask("ControleFinal")))
         {
             texteInteraction.text = "E";
 
-            if(Input.GetKeyDown(KeyCode.E) && !gestionPorteFinale.interagis)
+            if (Input.GetKeyDown(KeyCode.E) && !gestionPorteFinale.interagis)
             {
                 gestionPorteFinale.InteractionConsole();
                 texteInteraction.text = "";
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
             }
-            else if(Input.GetKeyDown(KeyCode.Q) && gestionPorteFinale.interagis)
+            else if (Input.GetKeyDown(KeyCode.Q) && gestionPorteFinale.interagis)
             {
                 gestionPorteFinale.InteractionConsole();
                 Cursor.lockState = CursorLockMode.Locked;
@@ -353,5 +372,45 @@ public class GestionRaycastsJoueur : MonoBehaviour
 
             estArme = false;
         }
+    }
+    
+    public void FonduAuNoir()
+    {
+        StartCoroutine(Fondu(0f, 1f));
+    }
+
+    public void FonduInverse()
+    {
+        StartCoroutine(Fondu(1f, 0f));
+    }
+
+    IEnumerator CommencerFondu()
+    {
+        FonduAuNoir();
+        yield return new WaitForSeconds(4);
+        StopCoroutine(CommencerFondu());
+        SceneManager.LoadScene("Code3E2");
+    }
+
+    IEnumerator CommencerFonduInverse()
+    {
+        FonduInverse();
+        yield return new WaitForSeconds(4);
+        StopCoroutine(CommencerFonduInverse());
+    }
+
+    IEnumerator Fondu(float alphaDebut, float alphaFin)
+    {
+        float temps = 0f;
+        Color couleur = image.color;
+        while (temps < duree)
+        {
+            float alpha = Mathf.Lerp(alphaDebut, alphaFin, temps / duree);
+            image.color = new Color(couleur.r, couleur.g, couleur.b, alpha);
+            temps += Time.deltaTime;
+            yield return null;
+        }
+
+        image.color = new Color(couleur.r, couleur.g, couleur.b, alphaFin);
     }
 }

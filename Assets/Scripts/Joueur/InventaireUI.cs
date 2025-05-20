@@ -15,10 +15,17 @@ public class InventaireUI : MonoBehaviour
 
     public bool inventaireUIActif = false;
 
-// Gère l'affichage de l'inventaire
+
+    void Start()
+    {
+        inventaireUI.SetActive(false);
+    }
+
+    // Gère l'affichage de l'inventaire
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.I) && !inventaireUIActif)
+
+        if (Input.GetKeyDown(KeyCode.I) && !inventaireUIActif)
         {
             numeroPage = 0;
 
@@ -29,7 +36,7 @@ public class InventaireUI : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
-        else if(Input.GetKeyDown(KeyCode.I) && inventaireUIActif)
+        else if (Input.GetKeyDown(KeyCode.I) && inventaireUIActif)
         {
             DetruireItems();
 
