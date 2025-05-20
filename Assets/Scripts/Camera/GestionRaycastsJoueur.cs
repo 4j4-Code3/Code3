@@ -24,6 +24,8 @@ public class GestionRaycastsJoueur : MonoBehaviour
     public bool estArme;
     private bool generateur;
 
+    bool fonctionne;
+
     private bool regardeRigidbody;
 
     // Start is called before the first frame update
@@ -32,6 +34,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
         estArme = false;
         regardeRigidbody = false;
         generateur = false;
+        fonctionne = false;
     }
 
     // Update is called once per frame
@@ -266,19 +269,24 @@ public class GestionRaycastsJoueur : MonoBehaviour
         // Actionner ascenseur
         if (Physics.Raycast(camRay.origin, camRay.direction, distanceRaycasts, LayerMask.GetMask("Ascenseur")))
         {
-            bool fonctionne = inventaire.items.Exists(item => item.nom == "Bouton");
+            if (inventaire.items.Exists(item => item.nom == "Bouton"))
+            {
+                fonctionne = true;
+            }
 
             if (!fonctionne || !generateur)
             {
                 texteInteraction.text = "Il manque quelque chose...";
             }
 
-            texteInteraction.text = "E";
-
-            if (Input.GetKeyDown(KeyCode.E) && fonctionne && generateur)
+            else if (fonctionne && generateur)
             {
-                inventaire.items.RemoveAll(item => item.nom == "Bouton");
-                Debug.Log("L'ascenseur fonctionne");
+                texteInteraction.text = "E";
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    inventaire.items.RemoveAll(item => item.nom == "Bouton");
+                    Debug.Log("L'ascenseur fonctionne");
+                }
             }
         }
 
