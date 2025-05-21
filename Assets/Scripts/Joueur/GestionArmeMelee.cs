@@ -10,6 +10,12 @@ public class GestionArmeMelee : MonoBehaviour
     public GameObject mainDroite;
     private Animator animator;
 
+
+    public AudioSource SourceAudio;
+    public AudioClip SonArmeClip;
+
+    private bool SonJouer = false;
+
     void Start()
     {
         armeTenue = armeTenue.GetComponent<GestionRaycastsJoueur>();
@@ -40,6 +46,11 @@ public class GestionArmeMelee : MonoBehaviour
             StartCoroutine(ReceptionDegats());
             AnimationAttaque();
         }
+
+        if (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            SonJouer = false;
+        }
     }
 
     IEnumerator ReceptionDegats()
@@ -64,6 +75,13 @@ public class GestionArmeMelee : MonoBehaviour
 
     void AnimationAttaque()
     {
+
         animator.SetTrigger("attaque");
+
+        if (!SonJouer)
+        {
+            SourceAudio.PlayOneShot(SonArmeClip);
+            SonJouer = true;
+        }
     }
 }

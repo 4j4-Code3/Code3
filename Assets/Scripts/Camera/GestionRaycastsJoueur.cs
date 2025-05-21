@@ -35,6 +35,22 @@ public class GestionRaycastsJoueur : MonoBehaviour
 
     private bool regardeRigidbody;
 
+
+
+    public AudioSource SourceAudio;
+    public AudioClip SonClefClip;
+    public AudioClip SonLumieres;
+    public AudioClip SonAscenceur;
+    public AudioClip SonPorteFinale;
+    public AudioClip SonPapier;
+
+    private bool sonClefJoue = false;
+    private bool sonPorteFinalJoue = false;
+    private bool sonLumiereJoue = false;
+    private bool sonAscenseurJoue = false;
+    private bool sonAscenseur2Joue = false;
+    private bool sonPapierJouer = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -147,6 +163,9 @@ public class GestionRaycastsJoueur : MonoBehaviour
                 inventaire.items.Add(noteComponent.noteData);
                 inventaire.noteMap[noteComponent.noteData] = noteComponent.gameObject;
                 Destroy(note);
+
+                //ajout du son pour 2 sec.
+                StartCoroutine(JouerSonPapierPendant2Secondes());
             }
         }
 
@@ -242,6 +261,13 @@ public class GestionRaycastsJoueur : MonoBehaviour
                 {
                     Debug.Log("Porte " + lecteurPorte.code + " ouverte");
                     lecteurPorteComponent.porteOuverte = true;
+                    
+                    // SON CLEF
+                    if (!sonClefJoue)
+                    {
+                        SourceAudio.PlayOneShot(SonClefClip);
+                        sonClefJoue = true;
+                    } 
                 }
             }
             else
@@ -270,6 +296,13 @@ public class GestionRaycastsJoueur : MonoBehaviour
                         lumiere.GetComponent<Light>().enabled = true;
                     }
                     generateur = true;
+                       
+                    //Son lumieres
+                    if (!sonLumiereJoue)
+                    {
+                        SourceAudio.PlayOneShot(SonLumieres);
+                        sonClefJoue = true;
+                    }
                 }
             }
         }
@@ -295,6 +328,13 @@ public class GestionRaycastsJoueur : MonoBehaviour
                     inventaire.items.RemoveAll(item => item.nom == "Bouton");
                     StartCoroutine(CommencerFondu());
                     Debug.Log("L'ascenseur fonctionne");
+
+                    //son ascenceur
+                    if (!sonAscenseurJoue)
+                    {
+                        SourceAudio.PlayOneShot(SonAscenceur);
+                        sonClefJoue = true;
+                    }
                 }
             }
         }
@@ -306,6 +346,13 @@ public class GestionRaycastsJoueur : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 StartCoroutine(CommencerFondu());
+
+                //son ascenceur
+                if (!sonAscenseur2Joue)
+                {
+                    SourceAudio.PlayOneShot(SonAscenceur);
+                    sonClefJoue = true;
+                }
             }
         }
 
@@ -345,6 +392,13 @@ public class GestionRaycastsJoueur : MonoBehaviour
                 texteInteraction.text = "";
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
+
+                 // SON PORTE FINALE
+                if (!sonPorteFinalJoue)
+                {
+                    SourceAudio.PlayOneShot(SonPorteFinale);
+                    sonPorteFinalJoue = true;
+                }
             }
             else if (Input.GetKeyDown(KeyCode.Q) && gestionPorteFinale.interagis)
             {
@@ -413,4 +467,13 @@ public class GestionRaycastsJoueur : MonoBehaviour
 
         image.color = new Color(couleur.r, couleur.g, couleur.b, alphaFin);
     }
+
+    IEnumerator JouerSonPapierPendant2Secondes()
+    {
+        SourceAudio.clip = SonPapier;
+        SourceAudio.Play();
+        yield return new WaitForSeconds(2f);
+        SourceAudio.Stop();
+    }
+
 }
