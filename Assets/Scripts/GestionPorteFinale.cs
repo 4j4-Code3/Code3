@@ -16,7 +16,9 @@ public class GestionPorteFinale : MonoBehaviour
 
     void Start()
     {
+        inputCodeObjet.SetActive(true);
         inputCodeObjet = GameObject.Find("InputCode");
+        inputCode = GameObject.Find("InputCode")?.GetComponent<TMP_InputField>();
 
         chancesCode = 3;
         inputCodeObjet.SetActive(false);

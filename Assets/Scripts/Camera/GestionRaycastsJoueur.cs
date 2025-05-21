@@ -357,28 +357,29 @@ public class GestionRaycastsJoueur : MonoBehaviour
         }
 
         // Affichage du UI du magasin
-            if (Physics.Raycast(camRay.origin, camRay.direction, distanceRaycasts, LayerMask.GetMask("Marchand")))
-            {
-                texteInteraction.text = "E";
-
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    magasinUI.SetActive(true);
-
-                    Cursor.lockState = CursorLockMode.None;
-                    Cursor.visible = true;
-
-                    magasinUIActif.magasinUIActif = true;
-                }
-            }
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Physics.Raycast(camRay.origin, camRay.direction, distanceRaycasts, LayerMask.GetMask("Marchand")))
         {
-            magasinUI.SetActive(false);
+            texteInteraction.text = "E";
 
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                magasinUI.SetActive(true);
 
-            magasinUIActif.magasinUIActif = false;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+
+                magasinUIActif.magasinUIActif = true;
+            }
+            
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                magasinUI.SetActive(false);
+
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+
+                magasinUIActif.magasinUIActif = false;
+            }
         }
 
         // Interaction Porte Finale

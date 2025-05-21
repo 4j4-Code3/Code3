@@ -17,4 +17,5 @@ MonoBehaviour:
   icone: {fileID: 21300000, guid: b399576a65b83d542b69af86d3b9de30, type: 3}
   description: "J'ai oubli\xE9 le code \xE0 trois chiffre de la porte de sortie.
     \xC7a serait b\xEAte qu'on ne soit plus capable de sortir quand tout \xE7a sera
-    fini!"
+    fini!\n\nAussi, il ne faut pas entrer trois fois le mauvais code. Sinon, quelque
+    chose d'horrible va se produire!"
