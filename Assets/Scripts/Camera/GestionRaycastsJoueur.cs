@@ -6,6 +6,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 
 
+
 public class GestionRaycastsJoueur : MonoBehaviour
 {
     private int distanceRaycasts = 2;
@@ -344,7 +345,13 @@ public class GestionRaycastsJoueur : MonoBehaviour
             texteInteraction.text = "E";
             if (Input.GetKeyDown(KeyCode.E))
             {
-                StartCoroutine(CommencerFondu());
+                //StartCoroutine(CommencerFonduE2());
+                GameObject managers = GameObject.Find("Managers");
+                Destroy(managers);
+                GameObject numero3 = GameObject.Find("Numero3");
+                Destroy(numero3);
+                SceneManager.LoadScene("Code3E1");
+                
 
                 //son ascenceur
                 if (!sonAscenseur2Joue)
@@ -392,8 +399,10 @@ public class GestionRaycastsJoueur : MonoBehaviour
                 texteInteraction.text = "";
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
+                SceneManager.LoadScene("Console");
 
-                 // SON PORTE FINALE
+
+                // SON PORTE FINALE
                 if (!sonPorteFinalJoue)
                 {
                     SourceAudio.PlayOneShot(SonPorteFinale);
@@ -444,6 +453,14 @@ public class GestionRaycastsJoueur : MonoBehaviour
         yield return new WaitForSeconds(4);
         StopCoroutine(CommencerFondu());
         SceneManager.LoadScene("Code3E2");
+    }
+
+    IEnumerator CommencerFonduE2()
+    {
+        FonduAuNoir();
+        yield return new WaitForSeconds(4);
+        StopCoroutine(CommencerFonduE2());
+        SceneManager.LoadScene("Code3E1");
     }
 
     IEnumerator CommencerFonduInverse()

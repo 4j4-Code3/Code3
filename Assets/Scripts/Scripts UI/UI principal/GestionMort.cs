@@ -11,10 +11,16 @@ public class GestionMort : MonoBehaviour
     public Image image;
     private float duree = 3f;
 
-    
+    void Start()
+    {
+        respawn = GameObject.Find("PointSpawn");
+    }
+
     void Update()
     {
-        if(deplacementsJoueur.mort)
+        respawn = GameObject.Find("PointSpawn");
+        image = GameObject.Find("FonduNoir").GetComponent<Image>();
+        if (deplacementsJoueur.mort)
         {
             StartCoroutine(CommencerFondu());
         }
