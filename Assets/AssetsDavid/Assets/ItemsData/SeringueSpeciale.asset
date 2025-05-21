@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a55f1f3060e0064baba2830ff01c46f, type: 3}
-  m_Name: BoutonAscenseur
+  m_Name: SeringueSpeciale
   m_EditorClassIdentifier: 
-  ID: 2f8344ba-7a96-40b0-b03c-525b0da45f7a
-  nom: Bouton
-  icone: {fileID: 21300000, guid: b190c677edaac49459f4c824891bc3c0, type: 3}
-  description: 'Un bouton d''ascenseur.
-
-'
+  ID: 51e7b28f-6aea-4f41-8656-ff4e8ea6cb7e
+  nom: "Seringue sp\xE9ciale"
+  icone: {fileID: 21300000, guid: abda92c07b36c374591fc7cd06bddf6e, type: 3}
+  description: "Cette seringue rend invuln\xE9rable aux radiations du deuxi\xE8me
+    \xE9tage."

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: e80fe700-f354-45b2-8566-a69479f99707
   nom: "Am\xE9lioration radiation I"
-  icone: {fileID: 21300000, guid: a1ff497ac83b9f247a9d444b29f84502, type: 3}
+  icone: {fileID: 21300000, guid: 96e2e77aee074b044b86e8327e297461, type: 3}
   description: "+5 \xC0 la barre de radiation!"
   prix: 1
   bonus: 5

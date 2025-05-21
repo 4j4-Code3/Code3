@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: de126cf7-9c47-4a1e-b88a-6a067f5c775e
   nom: "Am\xE9lioration seringues : Efficacit\xE9 III"
-  icone: {fileID: 21300000, guid: a1ff497ac83b9f247a9d444b29f84502, type: 3}
+  icone: {fileID: 21300000, guid: 562dccf99eddf6f4396186ff978f2338, type: 3}
   description: "+6 \xC0 l'efficacit\xE9 des seringues!"
   prix: 3
   bonus: 6

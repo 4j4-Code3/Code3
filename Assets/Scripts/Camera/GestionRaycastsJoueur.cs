@@ -56,7 +56,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
     {
         estArme = false;
         regardeRigidbody = false;
-        generateur = true;
+        generateur = false;
         fonctionne = false;
         magasinUI.SetActive(false);
     }
@@ -133,7 +133,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
         }
 
         // Prendre clef
-        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, distanceRaycasts, LayerMask.GetMask("Clef")))
+        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, distanceRaycasts + 5, LayerMask.GetMask("Clef")))
         {
             texteInteraction.text = "E";
 
@@ -149,7 +149,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
         }
 
         // Prendre note
-        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, distanceRaycasts, LayerMask.GetMask("Note")))
+        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, distanceRaycasts + 5, LayerMask.GetMask("Note")))
         {
             texteInteraction.text = "E";
 
@@ -200,7 +200,7 @@ public class GestionRaycastsJoueur : MonoBehaviour
         }
 
         // Prendre seringue
-        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, distanceRaycasts, LayerMask.GetMask("Seringue")))
+        if (Physics.Raycast(camRay.origin, camRay.direction, out infoCollision, distanceRaycasts + 4, LayerMask.GetMask("Seringue")))
         {
             GameObject seringue = infoCollision.collider.gameObject;
 

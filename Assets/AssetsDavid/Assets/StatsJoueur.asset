@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0461252cdd6c3934b8588823ba9aea94, type: 3}
   m_Name: StatsJoueur
   m_EditorClassIdentifier: 
-  radiation: 19
+  radiation: 0
   maxRadiation: 10000
   energie: 0
   efficaciteSeringue: 5
